@@ -20,7 +20,7 @@
       <TextField fx:id="lname_reg" layoutX="76.0" layoutY="200.0" prefHeight="35.0" prefWidth="230.0" promptText="Last Name" />
       <PasswordField fx:id="pass_reg" layoutX="76.0" layoutY="252.0" prefHeight="35.0" prefWidth="230.0" promptText="Password" />
       <ComboBox fx:id="course_combo_reg" layoutX="358.0" layoutY="200.0" prefHeight="35.0" prefWidth="180.0" promptText="Course" />
-      <Button fx:id="btn_register" layoutX="418.0" layoutY="335.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Register">
+      <Button fx:id="btn_register" layoutX="418.0" layoutY="335.0" mnemonicParsing="false" onAction="#registerControl" prefHeight="30.0" prefWidth="100.0" text="Register">
          <font>
             <Font name="Calibri Light" size="15.0" />
          </font>

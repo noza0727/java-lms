@@ -32,7 +32,7 @@
          </font>
       </Button>
       <PasswordField id="btn_register" layoutX="187.0" layoutY="223.0" prefHeight="28.0" prefWidth="230.0" promptText="Password" />
-      <Button fx:id="btn_register" layoutX="483.0" layoutY="343.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" text="Register" textFill="#835858" />
+      <Button layoutX="483.0" layoutY="343.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" text="Register" textFill="#835858" />
       <Label layoutX="395.0" layoutY="346.0" text="No accout?">
          <font>
             <Font size="14.0" />
