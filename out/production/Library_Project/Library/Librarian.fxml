@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: e5dfdf;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.LibrarianController">
+   <children>
+      <Button layoutX="586.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="30.0" style="-fx-background-color: lightGrey;" text="X" textFill="#835858">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="190.0" layoutY="40.0" prefHeight="50.0" prefWidth="230.0" text="Librarian" textFill="#835858">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutX="69.0" layoutY="175.0" prefHeight="100.0" prefWidth="472.0" spacing="60.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Students" textFill="#835858">
+               <font>
+                  <Font name="Calibri Light" size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="200.0" text="Books" textFill="#835858">
+               <font>
+                  <Font name="Calibri Light" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

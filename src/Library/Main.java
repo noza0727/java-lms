@@ -26,8 +26,6 @@ public class Main extends Application {
             primaryStage.initStyle(StageStyle.TRANSPARENT);
             primaryStage.setOnCloseRequest(e-> Platform.exit());
             primaryStage.show();
-
-
         }
 
 

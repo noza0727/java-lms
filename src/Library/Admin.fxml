@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: e5dfdf;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.Controller">
+   <children>
+      <Label alignment="CENTER" layoutX="190.0" layoutY="40.0" prefHeight="50.0" prefWidth="230.0" text="Admin" textFill="#835858">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER" layoutX="58.0" layoutY="126.0" prefHeight="220.0" prefWidth="158.0" spacing="25.0">
+         <children>
+            <ToggleButton mnemonicParsing="false" prefHeight="40.0" prefWidth="155.0" text="View " textFill="#835858">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="admin_operation" />
+               </toggleGroup>
+            </ToggleButton>
+            <ToggleButton layoutX="12.0" layoutY="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="155.0" text="Add" textFill="#835858" toggleGroup="$admin_operation">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton layoutX="12.0" layoutY="73.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="155.0" text="Modify" textFill="#835858" toggleGroup="$admin_operation">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </ToggleButton>
+            <ToggleButton layoutX="12.0" layoutY="165.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="155.0" text="Delete" textFill="#835858" toggleGroup="$admin_operation">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </ToggleButton>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="348.0" layoutY="126.0" prefHeight="220.0" prefWidth="158.0" spacing="30.0">
+         <children>
+            <ToggleButton mnemonicParsing="false" prefHeight="40.0" prefWidth="155.0" text="Librarian" textFill="#835858">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="admin_choice" />
+               </toggleGroup></ToggleButton>
+            <ToggleButton mnemonicParsing="false" prefHeight="40.0" prefWidth="155.0" text="Student" textFill="#835858" toggleGroup="$admin_choice">
+               <font>
+                  <Font size="15.0" />
+               </font></ToggleButton>
+            <ToggleButton mnemonicParsing="false" prefHeight="40.0" prefWidth="155.0" text="Books" textFill="#835858" toggleGroup="$admin_choice">
+               <font>
+                  <Font size="15.0" />
+               </font></ToggleButton>
+         </children>
+      </VBox>
+      <Button fx:id="closeButton" layoutX="586.0" mnemonicParsing="false" onAction="#handleCloseButton" prefHeight="28.0" prefWidth="30.0" style="-fx-background-color: lightGrey;" text="X" textFill="#835858">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
