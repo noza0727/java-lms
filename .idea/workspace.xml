@@ -2,27 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ca3e388-f4c6-4f05-8db9-160872a72f42" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Library/Admin.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Library/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Library/Configs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Library/Librarian.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Library/LibrarianController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Library/Student.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Library/StudentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Library_Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/Authorization.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/Authorization.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/Admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/Admin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/AdminController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/Database.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/StudentRegister.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/Authorization.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Authorization.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/Database.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/StudentRegister.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/Librarian.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/Librarian.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/LibrarianController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/LibrarianController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/Student.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/Student.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/StudentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/StudentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Library/Admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Admin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Library/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Library/LibrarianController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/LibrarianController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +36,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -73,7 +63,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/javafx-sdk-13.0.1/lib" />
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/test" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -134,7 +124,7 @@
       <updated>1576334523839</updated>
       <workItem from="1576334532307" duration="21459000" />
       <workItem from="1576433658826" duration="6243000" />
-      <workItem from="1576574439564" duration="28707000" />
+      <workItem from="1576574439564" duration="50331000" />
     </task>
     <servers />
   </component>
@@ -154,30 +144,34 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="432" y="199" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1366.728@0.0.1366.728" timestamp="1576568134939" />
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1576666126846">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1576666126846" />
     <state x="606" y="73" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1576576549658">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="606" y="73" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog/0.0.1366.728@0.0.1366.728" timestamp="1576576549658" />
-    <state x="463" y="117" key="FileChooserDialogImpl" timestamp="1576580192986">
+    <state x="463" y="117" key="FileChooserDialogImpl" timestamp="1576671118122">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="117" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1576580192986" />
-    <state width="1322" height="80" key="GridCell.Tab.0.bottom" timestamp="1576639919649">
+    <state x="463" y="117" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1576671118122" />
+    <state width="1322" height="78" key="GridCell.Tab.0.bottom" timestamp="1576683442977">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="80" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576639919649" />
-    <state width="1322" height="80" key="GridCell.Tab.0.center" timestamp="1576639919649">
+    <state width="1322" height="78" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1576683442977" />
+    <state width="1322" height="78" key="GridCell.Tab.0.center" timestamp="1576683442977">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="80" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576639919649" />
-    <state width="1322" height="80" key="GridCell.Tab.0.left" timestamp="1576639919648">
+    <state width="1322" height="78" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1576683442977" />
+    <state width="1322" height="78" key="GridCell.Tab.0.left" timestamp="1576683442977">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="80" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576639919648" />
-    <state width="1322" height="80" key="GridCell.Tab.0.right" timestamp="1576639919649">
+    <state width="1322" height="78" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1576683442977" />
+    <state width="1322" height="78" key="GridCell.Tab.0.right" timestamp="1576683442977">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="80" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576639919649" />
+    <state width="1322" height="78" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1576683442977" />
     <state width="1322" height="121" key="GridCell.Tab.1.bottom" timestamp="1576631367849">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

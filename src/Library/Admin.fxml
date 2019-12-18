@@ -4,63 +4,216 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: e5dfdf;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.Controller">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.AdminController">
    <children>
-      <Label alignment="CENTER" layoutX="190.0" layoutY="40.0" prefHeight="50.0" prefWidth="230.0" text="Admin" textFill="#835858">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
-      <VBox alignment="CENTER" layoutX="58.0" layoutY="126.0" prefHeight="220.0" prefWidth="158.0" spacing="25.0">
-         <children>
-            <ToggleButton mnemonicParsing="false" prefHeight="40.0" prefWidth="155.0" text="View " textFill="#835858">
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <toggleGroup>
-                  <ToggleGroup fx:id="admin_operation" />
-               </toggleGroup>
-            </ToggleButton>
-            <ToggleButton layoutX="12.0" layoutY="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="155.0" text="Add" textFill="#835858" toggleGroup="$admin_operation">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton layoutX="12.0" layoutY="73.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="155.0" text="Modify" textFill="#835858" toggleGroup="$admin_operation">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </ToggleButton>
-            <ToggleButton layoutX="12.0" layoutY="165.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="155.0" text="Delete" textFill="#835858" toggleGroup="$admin_operation">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </ToggleButton>
-         </children>
-      </VBox>
-      <VBox alignment="CENTER" layoutX="348.0" layoutY="126.0" prefHeight="220.0" prefWidth="158.0" spacing="30.0">
-         <children>
-            <ToggleButton mnemonicParsing="false" prefHeight="40.0" prefWidth="155.0" text="Librarian" textFill="#835858">
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <toggleGroup>
-                  <ToggleGroup fx:id="admin_choice" />
-               </toggleGroup></ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="40.0" prefWidth="155.0" text="Student" textFill="#835858" toggleGroup="$admin_choice">
-               <font>
-                  <Font size="15.0" />
-               </font></ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="40.0" prefWidth="155.0" text="Books" textFill="#835858" toggleGroup="$admin_choice">
-               <font>
-                  <Font size="15.0" />
-               </font></ToggleButton>
-         </children>
-      </VBox>
-      <Button fx:id="closeButton" layoutX="586.0" mnemonicParsing="false" onAction="#handleCloseButton" prefHeight="28.0" prefWidth="30.0" style="-fx-background-color: lightGrey;" text="X" textFill="#835858">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
+      <BorderPane fx:id="lib_pane" prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <TabPane prefHeight="373.0" prefWidth="490.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab fx:id="1" text="     Librarians    ">
+                    <content>
+                    <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints />
+
+                              <ColumnConstraints />
+                              <ColumnConstraints />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints />
+                           </rowConstraints>
+                           <children>
+                              <AnchorPane fx:id="viewPane_lib" prefHeight="331.0" prefWidth="472.0">
+
+                              </AnchorPane>
+                               <AnchorPane fx:id="addPane_lib" prefHeight="331.0" prefWidth="472.0">
+                                   <children>
+                                       <Label layoutX="180.0" layoutY="25.0" text="Add Librarian" textFill="#835858">
+                                           <font>
+                                               <Font size="20.0" />
+                                           </font>
+                                       </Label>
+                                       <VBox layoutX="100.0" layoutY="70.0" prefHeight="190.0" prefWidth="283.0" spacing="15.0">
+                                           <children>
+                                               <TextField fx:id="lib_ID_add" prefHeight="35.0" prefWidth="225.0" promptText="ID" />
+                                               <TextField fx:id="lib_Fname_add" prefHeight="35.0" prefWidth="225.0" promptText="First Name" />
+                                               <TextField fx:id="lib_Lname_add" prefHeight="35.0" prefWidth="225.0" promptText="Last Name" />
+                                               <PasswordField fx:id="lib_pass_add" prefHeight="35.0" prefWidth="225.0" promptText="Password" />
+                                           </children>
+                                       </VBox>
+                                       <HBox alignment="CENTER" layoutX="75.0" layoutY="280.0" prefHeight="48.0" prefWidth="352.0" spacing="50.0">
+                                           <children>
+                                               <Button fx:id="lib_clear" mnemonicParsing="false" prefHeight="32.0" prefWidth="81.0" text="Clear" textFill="#835858">
+                                                   <font>
+                                                       <Font size="14.0" />
+                                                   </font>
+                                               </Button>
+                                               <Button fx:id="lib_cancel_add" mnemonicParsing="false" prefHeight="32.0" prefWidth="81.0" text="Cancel" textFill="#835858">
+                                                   <font>
+                                                       <Font size="14.0" />
+                                                   </font>
+                                               </Button>
+                                               <Button fx:id="lib_add" mnemonicParsing="false" prefHeight="32.0" prefWidth="81.0" text="Add" textFill="#835858">
+                                                   <font>
+                                                       <Font size="14.0" />
+                                                   </font>
+                                               </Button>
+                                           </children>
+                                       </HBox>
+                                   </children>
+                               </AnchorPane>
+                               <AnchorPane fx:id="modifyPane_lib" prefHeight="331.0" prefWidth="472.0">
+
+                               </AnchorPane>
+                               <AnchorPane fx:id="deletePane_lib" prefHeight="331.0" prefWidth="472.0">
+
+                               </AnchorPane>
+                              <VBox prefHeight="331.0" prefWidth="125.0" GridPane.columnIndex="2">
+                                 <children>
+                                    <Button fx:id="view_lib" mnemonicParsing="false" prefHeight="65.0" prefWidth="125.0" text="View" textFill="#835858">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font></Button>
+                                    <Button fx:id="add_lib" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="125.0" text="Add" textFill="#835858">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="modify_lib" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="125.0" text="Modify" textFill="#835858">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="delete_lib" layoutX="10.0" layoutY="65.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="125.0" text="Delete" textFill="#835858">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="logOut_admin" layoutX="10.0" layoutY="175.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="125.0" text="Log Out" textFill="#835858">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Button>
+                                 </children></VBox>
+                           </children></GridPane>
+                    </content>
+                        </Tab>
+                <Tab fx:id="2" text="    Students    ">
+                  <content>
+                    <HBox minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                        <Label layoutX="71.0" layoutY="35.0" text="Search" textFill="#835858">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="student_search" layoutX="123.0" layoutY="32.0" prefHeight="25.0" prefWidth="289.0" promptText="Enter ID or Name" />
+                        <ListView fx:id="student_listView" fixedCellSize="5.0" layoutX="29.0" layoutY="94.0" prefHeight="204.0" prefWidth="433.0" />
+                              <VBox layoutX="490.0" layoutY="-2.0" prefHeight="335.0" prefWidth="110.0">
+                                 <children>
+                                    <Button fx:id="add_student" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="110.0" text="Add" textFill="#835858">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="view_student" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="110.0" text="View" textFill="#835858">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="modify_student" layoutX="10.0" layoutY="71.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="110.0" text="Modify" textFill="#835858">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="delete_student" layoutX="10.0" layoutY="132.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="110.0" text="Delete" textFill="#835858">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="10.0" layoutY="193.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="110.0" text="Settings" textFill="#835858">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="10.0" layoutY="254.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="110.0" text="Log out" textFill="#835858">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children></HBox>
+                  </content>
+
+
+                </Tab>
+                  <Tab fx:id="3" text="    Books    ">
+                      <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                              <children>
+                                  <Label layoutX="71.0" layoutY="35.0" text="Search" textFill="#835858">
+                                      <font>
+                                          <Font size="14.0" />
+                                      </font>
+                                  </Label>
+                                  <TextField fx:id="books_search" layoutX="123.0" layoutY="32.0" prefHeight="25.0" prefWidth="289.0" promptText="Enter ID or Name" />
+                                  <ListView fx:id="books_listView" fixedCellSize="5.0" layoutX="29.0" layoutY="94.0" prefHeight="204.0" prefWidth="433.0" />
+                                  <VBox layoutX="490.0" layoutY="-2.0" prefHeight="335.0" prefWidth="110.0">
+                                      <children>
+                                          <Button fx:id="view_books" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="110.0" text="View" textFill="#835858">
+                                              <font>
+                                                  <Font size="15.0" />
+                                              </font>
+                                          </Button>
+                                          <Button fx:id="add_books" mnemonicParsing="false" prefHeight="65.0" prefWidth="110.0" text="Add" textFill="#835858">
+                                              <font>
+                                                  <Font size="15.0" />
+                                              </font>
+                                          </Button>
+                                          <Button fx:id="modify_books" layoutX="10.0" layoutY="71.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="110.0" text="Modify" textFill="#835858">
+                                              <font>
+                                                  <Font size="15.0" />
+                                              </font>
+                                          </Button>
+                                          <Button fx:id="delete_books" layoutX="10.0" layoutY="132.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="110.0" text="Delete" textFill="#835858">
+                                              <font>
+                                                  <Font size="15.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="193.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="110.0" text="Settings" textFill="#835858">
+                                              <font>
+                                                  <Font size="15.0" />
+                                              </font>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="254.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="110.0" text="Log out" textFill="#835858">
+                                              <font>
+                                                  <Font size="15.0" />
+                                              </font>
+                                          </Button>
+                                      </children>
+                                  </VBox>
+                              </children></AnchorPane>
+                      </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+         <top>
+            <HBox prefHeight="40.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" prefHeight="40.0" prefWidth="574.0" style="-fx-background-color: e5dfdf;" text="Admin" textAlignment="CENTER" textFill="#835858">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="closeButton" alignment="CENTER" layoutX="571.0" mnemonicParsing="false" onAction="#handleCloseButton" prefHeight="40.0" prefWidth="36.0" style="-fx-background-color: e5dfdf;" text="X" textFill="#835858">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
    </children>
-</AnchorPane>
+</StackPane>
