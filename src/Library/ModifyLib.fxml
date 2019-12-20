@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="393.0" prefWidth="573.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.AdminController">
+   <children>
+      <HBox alignment="CENTER" layoutX="107.0" layoutY="93.0" prefHeight="39.0" prefWidth="379.0">
+         <children>
+            <TextField prefHeight="30.0" prefWidth="300.0" promptText="Search for Librarian" />
+            <Button fx:id="search" mnemonicParsing="false" prefHeight="30.0" prefWidth="65.0" text="Search" textFill="#835858" />
+         </children>
+      </HBox>
+      <TableView layoutX="82.0" layoutY="150.0" prefHeight="200.0" prefWidth="446.0">
+        <columns>
+          <TableColumn minWidth="0.0" prefWidth="94.0" text="ID" />
+          <TableColumn minWidth="0.0" prefWidth="130.0" text="First Name" />
+            <TableColumn minWidth="0.0" prefWidth="146.0" text="Last Name" />
+            <TableColumn prefWidth="75.0" text="Modify" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

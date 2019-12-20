@@ -41,6 +41,7 @@ public class LibrarianController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         createConnection();
+
     }
 
 

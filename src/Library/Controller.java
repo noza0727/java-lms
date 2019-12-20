@@ -74,20 +74,6 @@ public class Controller {
     }
 
     private void signInAs() throws IOException {
-        /*try{
-            conn = DriverManager.getConnection(
-                    "jdbc:mysql://" + dbHost +":"+dbPort+"/"+dbPath,
-                    dbUser, dbPass);
-            stmt = conn.createStatement();
-            pstmt_admin = conn.prepareStatement("SELECT ID AND Password FROM admins WHERE ID= ? AND Password=?");
-            pstmt_lib = conn.prepareStatement("SELECT ID AND Password FROM librarians WHERE ID= ? AND Password=?");
-            pstmt_student = conn.prepareStatement("SELECT ID AND Password FROM students WHERE ID= ? AND Password=?");
-        }catch(SQLException ex){
-            System.err.println(ex);
-        }
-
-         */
-
         createConnection();
         String signIn_ID = ID_signIn.getText().trim();
         String signIn_pass = pass_signIn.getText().trim();
