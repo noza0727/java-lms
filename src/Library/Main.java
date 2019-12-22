@@ -25,13 +25,13 @@ public class Main extends Application {
             primaryStage.setScene(scene);
             primaryStage.initStyle(StageStyle.TRANSPARENT);
             primaryStage.setOnCloseRequest(e-> Platform.exit());
+            primaryStage.setResizable(false);
             primaryStage.show();
         }
 
 
         public static void main(String[] args) {
             launch(args);
-            Connection con = null;
-            String databaseName = "";
+
         }
 }

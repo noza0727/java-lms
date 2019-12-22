@@ -1,31 +1,42 @@
 package Library;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.scene.control.CheckBox;
+
 public class LibrarianDetails {
-    private String ID;
-    private String fName;
-    private String lName;
+    public String id;
+    public String firstname;
+    public String lastname;
+    // public CheckBox checkBox = new CheckBox();
 
-    public void setID(String ID) {
-        this.ID = ID;
+
+    public LibrarianDetails(String id, String firstname, String lastname) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
     }
 
-    public void setFName(String fName) {
-        this.fName = fName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public void setLName(String lName) {
-        this.lName = lName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public String getID() {
-        return ID;
+    public String getId() {
+        return id;
     }
 
-    public String getfName() {
-        return fName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public String getlName() {
-        return lName;
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

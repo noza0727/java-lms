@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.LibrarianTable">
+    <children>
+        <VBox alignment="BOTTOM_CENTER" layoutX="444.0" layoutY="281.0" prefHeight="143.0" prefWidth="98.0" spacing="15.0" />
+        <TableView fx:id="tableLibrarian" layoutY="100.0" prefHeight="200.0" prefWidth="600.0">
+            <columns>
+                <TableColumn fx:id="col_id_lib" prefWidth="137.0" text="ID" />
+                <TableColumn fx:id="col_fname_lib" prefWidth="200.0" text="First Name" />
+            <TableColumn fx:id="col_lname_lib" prefWidth="152.0" text="Last Name" />
+            <TableColumn fx:id="col_select_lib" prefWidth="110.0" text="Select" />
+            </columns>
+        </TableView>
+        <HBox alignment="CENTER" layoutX="47.0" layoutY="56.0" prefHeight="31.0" prefWidth="507.0" spacing="15.0">
+            <children>
+                <TextField fx:id="field_search_lib" prefHeight="25.0" prefWidth="400.0" />
+                <Button fx:id="btn_search_lib" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Search" />
+            </children>
+        </HBox>
+      <HBox layoutX="198.0" layoutY="330.0" prefHeight="35.0" prefWidth="204.0" spacing="30.0">
+         <children>
+
+                <ToggleButton fx:id="btn_delete_lib" mnemonicParsing="false" prefHeight="35.0" prefWidth="85.0" text="Delete" textFill="#835858">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+               <toggleGroup>
+                        <ToggleGroup fx:id="operation" />
+               </toggleGroup>
+                </ToggleButton>
+                <ToggleButton fx:id="btn_add_lib" mnemonicParsing="false" onAction="#addLibrarian" prefHeight="35.0" prefWidth="85.0" text="Add" textFill="#835858" toggleGroup="$operation">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </ToggleButton>
+         </children>
+      </HBox>
+    </children>
+
+</AnchorPane>

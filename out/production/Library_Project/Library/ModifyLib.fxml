@@ -2,22 +2,38 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="393.0" prefWidth="573.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.AdminController">
    <children>
-      <HBox alignment="CENTER" layoutX="107.0" layoutY="93.0" prefHeight="39.0" prefWidth="379.0">
+      <VBox layoutX="98.0" layoutY="105.0" prefHeight="187.0" prefWidth="303.0" spacing="15.0">
          <children>
-            <TextField prefHeight="30.0" prefWidth="300.0" promptText="Search for Librarian" />
-            <Button fx:id="search" mnemonicParsing="false" prefHeight="30.0" prefWidth="65.0" text="Search" textFill="#835858" />
+            <TextField fx:id="edit_id_lib" prefHeight="35.0" prefWidth="225.0" promptText="ID" />
+            <TextField fx:id="edit_fname_lib" prefHeight="35.0" prefWidth="225.0" promptText="First Name" />
+            <TextField fx:id="edit_lname_lib" prefHeight="35.0" prefWidth="225.0" promptText="Last Name" />
+            <TextField fx:id="edit_pass_lib" editable="false" prefHeight="35.0" prefWidth="225.0" promptText="Password" />
+         </children>
+      </VBox>
+      <Label alignment="CENTER" layoutX="136.0" layoutY="46.0" prefHeight="30.0" prefWidth="228.0" text="Edit Librarian Info" textFill="#835858">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutX="74.0" layoutY="316.0" prefHeight="48.0" prefWidth="352.0" spacing="50.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="81.0" text="Clear" textFill="#835858">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="81.0" text="Cancel" textFill="#835858">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" prefHeight="32.0" prefWidth="81.0" text="Edit" textFill="#835858">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
          </children>
       </HBox>
-      <TableView layoutX="82.0" layoutY="150.0" prefHeight="200.0" prefWidth="446.0">
-        <columns>
-          <TableColumn minWidth="0.0" prefWidth="94.0" text="ID" />
-          <TableColumn minWidth="0.0" prefWidth="130.0" text="First Name" />
-            <TableColumn minWidth="0.0" prefWidth="146.0" text="Last Name" />
-            <TableColumn prefWidth="75.0" text="Modify" />
-        </columns>
-      </TableView>
    </children>
 </AnchorPane>

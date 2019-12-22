@@ -4,38 +4,49 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: e5dfdf;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.StudentController">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: e5dfdf;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.StudentController">
    <children>
-      <Label layoutX="41.0" layoutY="44.0" prefHeight="50.0" prefWidth="397.0" text="Name of the student" textFill="#835858">
+      <Label fx:id="name_show" layoutX="27.0" layoutY="28.0" prefHeight="50.0" prefWidth="397.0" text="Name of the student" textFill="#835858">
          <font>
             <Font size="30.0" />
          </font></Label>
-      <Label layoutX="282.0" layoutY="140.0" prefHeight="33.0" prefWidth="101.0" text="Status: ">
+      <Label layoutX="259.0" layoutY="113.0" prefHeight="33.0" prefWidth="53.0" text="Status: ">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="438.0" layoutY="140.0" prefHeight="33.0" prefWidth="101.0" text="Fine: ">
+      <Label layoutX="414.0" layoutY="113.0" prefHeight="33.0" prefWidth="38.0" text="Fine: ">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="47.0" layoutY="106.0" text="ID of the student">
+      <Label fx:id="id_show" layoutX="35.0" layoutY="86.0" text="ID of the student">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <ScrollBar fx:id="horizontal_scrlBar" layoutX="76.0" layoutY="343.0" prefHeight="14.0" prefWidth="466.0" />
-      <HBox alignment="CENTER" layoutX="76.0" layoutY="195.0" prefHeight="148.0" prefWidth="466.0">
-         <children>
-            <Label text="books pic to bel placed or whatever" />
-         </children>
-      </HBox>
-      <ScrollBar fx:id="vertical_scrlBar" layoutX="572.0" layoutY="44.0" min="1.0" orientation="VERTICAL" prefHeight="332.0" prefWidth="14.0" unitIncrement="2.0" />
-      <Button fx:id="closeButton" layoutX="586.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="30.0" style="-fx-background-color: lightGrey;" text="X" textFill="#835858">
+      <Button fx:id="closeButton" layoutX="671.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="30.0" style="-fx-background-color: lightGrey;" text="X" textFill="#835858">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
+      <VBox layoutX="102.0" layoutY="194.0" prefHeight="222.0" prefWidth="502.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="499.0" text="My Books" textFill="#835858">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TableView prefHeight="192.0" prefWidth="505.0">
+               <columns>
+                  <TableColumn prefWidth="136.0" text="Book Name " />
+                  <TableColumn prefWidth="124.0" text="Author" />
+                  <TableColumn prefWidth="77.0" text="Genre" />
+                  <TableColumn minWidth="0.0" prefWidth="103.0" text="ISBN" />
+                  <TableColumn prefWidth="61.0" text="Available" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

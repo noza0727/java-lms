@@ -73,6 +73,10 @@ public class Controller {
         }
     }
 
+
+
+    static String getID;
+
     private void signInAs() throws IOException {
         createConnection();
         String signIn_ID = ID_signIn.getText().trim();
@@ -94,12 +98,15 @@ public class Controller {
 
                 if(result_admin.next()){
                    window_loc = "Admin.fxml";
+
                 }
                 else if(result_lib.next()){
                     window_loc = "Librarian.fxml";
                 }
                 else if(result_student.next()){
                     window_loc = "Student.fxml";
+                    getID = signIn_ID;
+
                 }
                 else{
                     error_field.setText("Please enter a valid user");

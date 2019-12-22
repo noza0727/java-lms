@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.AdminController">
+<AnchorPane prefHeight="400.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.AddLibrarianController">
     <children>
         <Label layoutX="180.0" layoutY="38.0" text="Add Librarian" textFill="#835858">
             <font>
@@ -26,17 +26,26 @@
                         <Font size="14.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#cancelAdd" prefHeight="32.0" prefWidth="81.0" text="Cancel" textFill="#835858">
+                <Button mnemonicParsing="false" onAction="#handleCloseButton" prefHeight="32.0" prefWidth="81.0" text="Cancel" textFill="#835858">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#addLibrarian" prefHeight="32.0" prefWidth="81.0" text="Add" textFill="#835858">
+                <Button mnemonicParsing="false" onAction="#addLib" prefHeight="32.0" prefWidth="81.0" text="Add" textFill="#835858">
                     <font>
                         <Font size="14.0" />
                     </font>
                 </Button>
             </children>
         </HBox>
+      <Label fx:id="add_error" alignment="CENTER" layoutX="96.0" layoutY="295.0" prefHeight="17.0" prefWidth="283.0" textFill="#bc2a2a">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="closeButton" layoutX="505.0" mnemonicParsing="false" onAction="#handleCloseButton" prefHeight="28.0" prefWidth="30.0" text="X" textFill="#835858">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
     </children>
 </AnchorPane>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.StudentsTable">
+    <children>
+        <VBox alignment="BOTTOM_CENTER" layoutX="441.0" layoutY="225.0" prefHeight="143.0" prefWidth="98.0" spacing="15.0" />
+        <TableView fx:id="tableStudent" layoutY="100.0" prefHeight="200.0" prefWidth="600.0">
+            <columns>
+                <TableColumn fx:id="col_id_student" onEditCommit="#editID" prefWidth="78.0" text="ID" />
+                <TableColumn fx:id="col_fname_student" onEditCommit="#editFname" prefWidth="154.0" text="First Name" />
+                <TableColumn fx:id="col_lname_student" onEditCommit="#editLname" prefWidth="145.0" text="Last Name" />
+                <TableColumn fx:id="col_year_student" onEditCommit="#editYear" prefWidth="88.0" text="Year" />
+                <TableColumn fx:id="col_department" onEditCommit="#editDepartment" prefWidth="85.0" text="Department" />
+                <TableColumn fx:id="col_select_student" prefWidth="49.0" text="Select" />
+            </columns>
+        </TableView>
+        <HBox alignment="CENTER" layoutX="47.0" layoutY="56.0" prefHeight="31.0" prefWidth="507.0" spacing="15.0">
+            <children>
+                <TextField prefHeight="25.0" prefWidth="400.0" />
+                <Button fx:id="searchStudent" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Search" />
+            </children>
+        </HBox>
+      <HBox layoutX="198.0" layoutY="330.0" prefHeight="35.0" prefWidth="202.0" spacing="30.0">
+         <children>
+
+                <ToggleButton mnemonicParsing="false" prefHeight="35.0" prefWidth="85.0" text="Delete" textFill="#835858">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+               <toggleGroup>
+                        <ToggleGroup fx:id="operation" />
+               </toggleGroup>
+                </ToggleButton>
+                <ToggleButton fx:id="add_student" mnemonicParsing="false" onAction="#addNewStudent" prefHeight="35.0" prefWidth="85.0" text="Add" textFill="#835858" toggleGroup="$operation">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </ToggleButton>
+         </children>
+      </HBox>
+    </children>
+</AnchorPane>
