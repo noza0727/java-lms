@@ -3,18 +3,21 @@ package Library;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.stage.Stage;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.scene.*;
 import java.io.IOException;
+import java.net.URL;
 import java.sql.*;
+import java.util.ResourceBundle;
 
 import static Library.Configs.*;
 
 
 
-public class Controller {
+public class Controller implements Initializable {
 
     private static Connection conn;
     private static Statement stmt;
@@ -67,6 +70,9 @@ public class Controller {
                 window.setScene(newScene);
                 window.show();
             }
+            else{
+                signInAs();
+            }
 
         }catch(IOException ex){
             System.err.println(ex);
@@ -109,7 +115,9 @@ public class Controller {
 
                 }
                 else{
+                    window_loc=null;
                     error_field.setText("Please enter a valid user");
+
                 }
 
             }catch (SQLException ex){
@@ -122,4 +130,8 @@ public class Controller {
 
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }

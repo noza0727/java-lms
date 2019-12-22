@@ -128,8 +128,12 @@ public class AdminController implements Initializable {
 
     }
 
-    public void signOut(){
-
+    public void signOut(ActionEvent event) throws IOException {
+        Parent backwindow = FXMLLoader.load(getClass().getResource("Authorization.fxml"));
+        Scene newScene = new Scene(backwindow);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(newScene);
+        window.show();
     }
 
 }

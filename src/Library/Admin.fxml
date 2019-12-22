@@ -35,7 +35,7 @@
     <AnchorPane fx:id="anchorPane" layoutX="154.0" layoutY="107.0" prefHeight="400.0" prefWidth="650.0">
 
     </AnchorPane>
-    <ToggleButton fx:id="logOut_admin" layoutX="694.0" layoutY="52.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="79.0" text="Sign Out" textFill="#835858">
+    <ToggleButton layoutX="694.0" layoutY="52.0" mnemonicParsing="false" onAction="#signOut" prefHeight="35.0" prefWidth="79.0" text="Sign Out" textFill="#835858">
       <font>
          <Font size="13.0" />
       </font>

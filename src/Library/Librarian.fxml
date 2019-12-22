@@ -16,7 +16,7 @@
             <Font size="28.0" />
          </font>
       </Label>
-      <HBox fx:id="user_box_lib" alignment="CENTER" layoutX="232.0" layoutY="38.0" prefHeight="60.0" prefWidth="406.0" spacing="40.0">
+      <HBox fx:id="user_box_lib" alignment="CENTER" layoutX="227.0" layoutY="38.0" prefHeight="60.0" prefWidth="375.0" spacing="40.0">
          <ToggleButton fx:id="btn_student_lib" mnemonicParsing="false" onAction="#userHandlerLib" prefHeight="35.0" prefWidth="150.0" text="Students" textFill="#835858">
             <font>
                <Font name="Calibri Light" size="15.0" />
@@ -35,5 +35,10 @@
 
       </AnchorPane>
       <Button fx:id="lib_profile" layoutX="25.0" layoutY="94.0" mnemonicParsing="false" opacity="0.8" prefHeight="25.0" prefWidth="107.0" text="Profile" textFill="#835858" />
+      <Button layoutX="639.0" layoutY="51.0" mnemonicParsing="false" onAction="#signOut" prefHeight="35.0" prefWidth="82.0" text="Sign Out" textFill="#835858">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

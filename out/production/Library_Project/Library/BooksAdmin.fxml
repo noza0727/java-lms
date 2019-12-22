@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.TableBooks">
     <children>
-        <TableView fx:id="table" editable="true" layoutY="100.0" onSort="#delete" prefHeight="200.0" prefWidth="600.0">
+        <TableView fx:id="table" editable="true" layoutY="100.0" prefHeight="200.0" prefWidth="600.0">
             <columns>
                 <TableColumn fx:id="coltitle" onEditCommit="#editTitle" prefWidth="140.0" text="Title" />
                 <TableColumn fx:id="colauthor" onEditCommit="#editAuthor" prefWidth="104.0" text="Author" />
@@ -24,7 +24,7 @@
         </HBox>
       <HBox alignment="CENTER" layoutX="198.0" layoutY="330.0" prefHeight="35.0" prefWidth="206.0" spacing="30.0">
          <children>
-                <ToggleButton fx:id="add_book_lib" mnemonicParsing="false" prefHeight="35.0" prefWidth="85.0" text="Add" textFill="#835858">
+                <ToggleButton mnemonicParsing="false" onAction="#addBook" prefHeight="35.0" prefWidth="85.0" text="Add" textFill="#835858">
                     <font>
                         <Font size="15.0" />
                     </font>
@@ -33,7 +33,7 @@
                </toggleGroup>
                 </ToggleButton>
 
-                <ToggleButton fx:id="delete_book_lib" mnemonicParsing="false" prefHeight="35.0" prefWidth="85.0" text="Delete" textFill="#835858" toggleGroup="$operation">
+                <ToggleButton fx:id="delete_book_lib" mnemonicParsing="false" onAction="#deleteBook" prefHeight="35.0" prefWidth="85.0" text="Delete" textFill="#835858" toggleGroup="$operation">
                     <font>
                         <Font size="15.0" />
                     </font>

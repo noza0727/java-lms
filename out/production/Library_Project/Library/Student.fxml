@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: e5dfdf;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.StudentController">
    <children>
-      <Label fx:id="name_show" layoutX="27.0" layoutY="28.0" prefHeight="50.0" prefWidth="397.0" text="Name of the student" textFill="#835858">
+      <Label fx:id="name_show" layoutX="27.0" layoutY="28.0" prefHeight="50.0" prefWidth="423.0" text="Name of the student" textFill="#835858">
          <font>
             <Font size="30.0" />
          </font></Label>
@@ -20,7 +20,7 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="id_show" layoutX="35.0" layoutY="86.0" text="ID of the student">
+      <Label fx:id="id_show" layoutX="35.0" layoutY="86.0" prefHeight="33.0" prefWidth="203.0" text="ID of the student">
          <font>
             <Font size="18.0" />
          </font>
@@ -37,17 +37,22 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <TableView fx:id="table" editable="true" layoutY="100.0" onSort="#delete" prefHeight="209.0" prefWidth="602.0">
+            <TableView fx:id="table" editable="true" layoutY="100.0" prefHeight="209.0" prefWidth="602.0">
                <columns>
-                  <TableColumn fx:id="coltitle"  prefWidth="149.0" text="Title" />
-                  <TableColumn fx:id="colauthor"  prefWidth="123.0" text="Author" />
+                  <TableColumn fx:id="coltitle" prefWidth="149.0" text="Title" />
+                  <TableColumn fx:id="colauthor" prefWidth="123.0" text="Author" />
                   <TableColumn fx:id="colyear" prefWidth="92.0" text="Publish Year" />
-                  <TableColumn fx:id="colgenre"  prefWidth="82.0" text="Genre" />
+                  <TableColumn fx:id="colgenre" prefWidth="82.0" text="Genre" />
                   <TableColumn fx:id="colid" prefWidth="90.0" text="ISBN" />
-                  <TableColumn fx:id="colstatus" minWidth="0.0"  prefWidth="65.0" text="Available" />
+                  <TableColumn fx:id="colstatus" minWidth="0.0" prefWidth="65.0" text="Available" />
                </columns>
             </TableView>
          </children>
       </VBox>
+      <Button layoutX="555.0" layoutY="36.0" mnemonicParsing="false" onAction="#signOut" opacity="0.78" prefHeight="33.0" prefWidth="77.0" text="Sign Out" textFill="#835858">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

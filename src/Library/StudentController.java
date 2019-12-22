@@ -2,14 +2,20 @@ package Library;
 
 import javafx.beans.Observable;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
@@ -78,7 +84,7 @@ public class StudentController implements  Initializable{
         }
         String b1,b2,b3,b4,b5;
 
-        try {
+        /*try {
             Connection con = Database.getConnection();
             ResultSet rs = con.createStatement().executeQuery("SELECT book1, book2, book3, book4, book5 FROM students where ID ='"+Controller.getID+"'");
             b1 = rs.getString("book1");
@@ -99,11 +105,17 @@ public class StudentController implements  Initializable{
             }
 
 
-
         } catch (SQLException e) {
             Logger.getLogger(TableBooks.class.getName()).log(Level.SEVERE,null,e);
-        }
+        }*/
 
+    }
 
+    public void signOut(ActionEvent event) throws IOException {
+        Parent backwindow = FXMLLoader.load(getClass().getResource("Authorization.fxml"));
+        Scene newScene = new Scene(backwindow);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(newScene);
+        window.show();
     }
 }

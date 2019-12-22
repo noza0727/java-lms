@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<AnchorPane prefHeight="404.0" prefWidth="307.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.AddController">
+   <children>
+      <VBox layoutX="6.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="433.0">
+          <children>
+              <TextField fx:id="isbn" opacity="0.84" promptText="ISBN">
+                  <font>
+                      <Font name="Segoe UI" size="16.0" />
+                  </font>
+                  <VBox.margin>
+                      <Insets left="100.0" right="100.0" top="20.0" />
+                  </VBox.margin>
+              </TextField>
+              <TextField fx:id="title" layoutX="10.0" layoutY="10.0" opacity="0.84" promptText="Title">
+                  <font>
+                      <Font name="Segoe UI" size="16.0" />
+                  </font>
+                  <VBox.margin>
+                      <Insets left="100.0" right="100.0" top="20.0" />
+                  </VBox.margin>
+              </TextField>
+              <TextField fx:id="author" layoutX="10.0" layoutY="10.0" opacity="0.84" promptText="Author">
+                  <font>
+                      <Font name="Segoe UI" size="16.0" />
+                  </font>
+                  <VBox.margin>
+                      <Insets left="100.0" right="100.0" top="20.0" />
+                  </VBox.margin>
+              </TextField>
+              <TextField fx:id="subject" layoutX="10.0" layoutY="60.0" opacity="0.84" promptText="Subject">
+                  <font>
+                      <Font name="Segoe UI" size="16.0" />
+                  </font>
+                  <VBox.margin>
+                      <Insets left="100.0" right="100.0" top="20.0" />
+                  </VBox.margin>
+              </TextField>
+              <TextField fx:id="year" layoutX="10.0" layoutY="60.0" opacity="0.84" promptText="Year of Publication">
+                  <font>
+                      <Font name="Segoe UI" size="16.0" />
+                  </font>
+                  <VBox.margin>
+                      <Insets left="100.0" right="100.0" top="20.0" />
+                  </VBox.margin>
+              </TextField>
+              <TextField fx:id="isAvailable" layoutX="10.0" layoutY="110.0" opacity="0.84" promptText="Available?">
+                  <font>
+                      <Font name="Segoe UI" size="16.0" />
+                  </font>
+                  <VBox.margin>
+                      <Insets left="100.0" right="100.0" top="20.0" />
+                  </VBox.margin>
+              </TextField>
+              <HBox prefHeight="50.0" prefWidth="465.0">
+                  <VBox.margin>
+                      <Insets top="20.0" />
+                  </VBox.margin>
+                  <children>
+                      <Button fx:id="cancel" alignment="CENTER" cancelButton="true" mnemonicParsing="false" onMouseClicked="#close" prefHeight="34.0" prefWidth="83.0" text="Reset">
+                          <HBox.margin>
+                              <Insets left="125.0" top="10.0" />
+                          </HBox.margin>
+                          <font>
+                              <Font name="System Bold" size="14.0" />
+                          </font>
+                      </Button>
+                      <Button fx:id="save" alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#save" prefHeight="34.0" prefWidth="83.0" text="Save">
+                          <font>
+                              <Font name="System Bold" size="14.0" />
+                          </font>
+                          <HBox.margin>
+                              <Insets left="80.0" top="10.0" />
+                          </HBox.margin>
+                      </Button>
+                  </children>
+              </HBox>
+          </children>
+      </VBox>
+   </children>
+</AnchorPane>

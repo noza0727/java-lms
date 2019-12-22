@@ -16,7 +16,7 @@ import java.sql.Connection;
 
 
 public class Main extends Application {
-
+public static String changeWindow = "Authorization.fxml";
         @Override
         public void start(Stage primaryStage) throws Exception{
             Parent root = FXMLLoader.load(getClass().getResource("Authorization.fxml"));
