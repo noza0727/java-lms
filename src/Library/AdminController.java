@@ -61,7 +61,7 @@ public class AdminController implements Initializable {
 
 
     @FXML
-    private ToggleButton btn_add_lib,  btn_cancel_lib,btn_delete_lib, logOut_admin;
+    private Button logOut_admin;
 
 
 
@@ -97,6 +97,7 @@ public class AdminController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+
     }
 
 
@@ -126,4 +127,9 @@ public class AdminController implements Initializable {
     public void show_profile(){
 
     }
+
+    public void signOut(){
+
+    }
+
 }

@@ -9,10 +9,10 @@
         <VBox alignment="BOTTOM_CENTER" layoutX="444.0" layoutY="281.0" prefHeight="143.0" prefWidth="98.0" spacing="15.0" />
         <TableView fx:id="tableLibrarian" layoutY="100.0" prefHeight="200.0" prefWidth="600.0">
             <columns>
-                <TableColumn fx:id="col_id_lib" prefWidth="137.0" text="ID" />
-                <TableColumn fx:id="col_fname_lib" prefWidth="200.0" text="First Name" />
-            <TableColumn fx:id="col_lname_lib" prefWidth="152.0" text="Last Name" />
-            <TableColumn fx:id="col_select_lib" prefWidth="110.0" text="Select" />
+                <TableColumn fx:id="col_id_lib" onEditCommit="#editIDlib" prefWidth="158.0" text="ID" />
+                <TableColumn fx:id="col_fname_lib" onEditCommit="#editFnameLib" prefWidth="213.0" text="First Name" />
+            <TableColumn fx:id="col_lname_lib" onEditCommit="#editLnameLib" prefWidth="228.0" text="Last Name" />
+            <TableColumn fx:id="col_select_lib" minWidth="0.0" prefWidth="0.0" text="Select" />
             </columns>
         </TableView>
         <HBox alignment="CENTER" layoutX="47.0" layoutY="56.0" prefHeight="31.0" prefWidth="507.0" spacing="15.0">
@@ -24,7 +24,7 @@
       <HBox layoutX="198.0" layoutY="330.0" prefHeight="35.0" prefWidth="204.0" spacing="30.0">
          <children>
 
-                <ToggleButton fx:id="btn_delete_lib" mnemonicParsing="false" prefHeight="35.0" prefWidth="85.0" text="Delete" textFill="#835858">
+                <ToggleButton fx:id="btn_delete_lib" mnemonicParsing="false" onAction="#deleteLib" prefHeight="35.0" prefWidth="85.0" text="Delete" textFill="#835858">
                     <font>
                         <Font size="15.0" />
                     </font>

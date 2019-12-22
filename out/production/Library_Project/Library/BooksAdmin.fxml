@@ -8,13 +8,12 @@
     <children>
         <TableView fx:id="table" editable="true" layoutY="100.0" onSort="#delete" prefHeight="200.0" prefWidth="600.0">
             <columns>
-                <TableColumn fx:id="coltitle" onEditCommit="#editTitle" prefWidth="115.0" text="Title" />
-                <TableColumn fx:id="colauthor" onEditCommit="#editAuthor" prefWidth="108.0" text="Author" />
-                <TableColumn fx:id="colyear" onEditCommit="#editYearPublish" prefWidth="84.0" text="Publish Year" />
-                <TableColumn fx:id="colgenre" onEditCommit="#editGenre" prefWidth="71.0" text="Genre" />
-                <TableColumn fx:id="colid" onEditCommit="#editIsbn" prefWidth="112.0" text="ISBN" />
-                <TableColumn fx:id="colstatus" onEditCommit="#editAvailable" prefWidth="60.0" text="Available" />
-                <TableColumn fx:id="colselect" prefWidth="49.0" text="Select " />
+                <TableColumn fx:id="coltitle" onEditCommit="#editTitle" prefWidth="140.0" text="Title" />
+                <TableColumn fx:id="colauthor" onEditCommit="#editAuthor" prefWidth="104.0" text="Author" />
+                <TableColumn fx:id="colyear" onEditCommit="#editYearPublish" prefWidth="89.0" text="Publish Year" />
+                <TableColumn fx:id="colgenre" onEditCommit="#editGenre" prefWidth="83.0" text="Genre" />
+                <TableColumn fx:id="colid" onEditCommit="#editIsbn" prefWidth="106.0" text="ISBN" />
+                <TableColumn fx:id="colstatus" onEditCommit="#editAvailable" prefWidth="77.0" text="Available" />
             </columns>
         </TableView>
         <HBox alignment="CENTER" layoutX="47.0" layoutY="56.0" prefHeight="31.0" prefWidth="507.0" spacing="15.0">

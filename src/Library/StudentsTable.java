@@ -148,7 +148,7 @@ public class StudentsTable implements Initializable {
             Connection con = Database.getConnection();
             Statement stmt = con.createStatement();
             stmt.executeUpdate("UPDATE students set FirstName='"+data2+"' where FirstName like '"
-                    +data1+"'");
+                    +data1+"' and ID='"+item.getStudentID()+"'");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -174,7 +174,7 @@ public class StudentsTable implements Initializable {
             Connection con = Database.getConnection();
             Statement stmt = con.createStatement();
             stmt.executeUpdate("UPDATE students set LastName='"+data2+"' where LastName like '"
-                    +data1+"'");
+                    +data1+"' and ID='"+item.getStudentID()+"'");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -246,6 +246,27 @@ public class StudentsTable implements Initializable {
         stage3.initStyle(StageStyle.TRANSPARENT);
         stage3.setOnCloseRequest(e-> Platform.exit());
         stage3.show();
+
+    }
+
+    public void deleteLib(){
+        StudentDetails libselected = tableStudent.getSelectionModel().getSelectedItem();
+        TablePosition pos =tableStudent.getSelectionModel().getSelectedCells().get(0);
+        int row = pos.getRow();
+        StudentDetails item = tableStudent.getItems().get(row);
+        try {
+            if(libselected!=null){
+                PreparedStatement statement = conn.prepareStatement("DELETE FROM students WHERE ID = ?");
+                statement.setString(1, item.getStudentID());
+                statement.executeUpdate();
+            }
+            else
+                System.out.println("its null awe");
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
 
     }
 }

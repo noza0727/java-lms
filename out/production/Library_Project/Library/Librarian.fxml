@@ -4,19 +4,19 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: e5dfdf;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.LibrarianController">
+<AnchorPane prefHeight="500.0" prefWidth="750.0" style="-fx-background-color: e5dfdf;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.LibrarianController">
    <children>
-      <Button fx:id="closeButton" layoutX="674.0" mnemonicParsing="false" onAction="#handleCloseButton" prefHeight="28.0" prefWidth="30.0" style="-fx-background-color: lightGrey;" text="X" textFill="#835858">
+      <Button fx:id="closeButton" layoutX="721.0" mnemonicParsing="false" onAction="#handleCloseButton" prefHeight="28.0" prefWidth="30.0" style="-fx-background-color: lightGrey;" text="X" textFill="#835858">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutY="48.0" prefHeight="37.0" prefWidth="169.0" text="Librarian" textFill="#835858">
+      <Label alignment="CENTER" layoutX="6.0" layoutY="48.0" prefHeight="40.0" prefWidth="150.0" text="Librarian" textFill="#835858">
          <font>
             <Font size="28.0" />
          </font>
       </Label>
-      <HBox fx:id="user_box_lib" alignment="CENTER" layoutX="196.0" layoutY="38.0" prefHeight="60.0" prefWidth="406.0" spacing="40.0">
+      <HBox fx:id="user_box_lib" alignment="CENTER" layoutX="232.0" layoutY="38.0" prefHeight="60.0" prefWidth="406.0" spacing="40.0">
          <ToggleButton fx:id="btn_student_lib" mnemonicParsing="false" onAction="#userHandlerLib" prefHeight="35.0" prefWidth="150.0" text="Students" textFill="#835858">
             <font>
                <Font name="Calibri Light" size="15.0" />
@@ -31,8 +31,9 @@
             </font>
          </ToggleButton>
       </HBox>
-      <AnchorPane fx:id="anchorLib" layoutX="90.0" layoutY="98.0" prefHeight="380.0" prefWidth="600.0">
+      <AnchorPane fx:id="anchorLib" layoutX="144.0" layoutY="106.0" prefHeight="392.0" prefWidth="600.0">
 
       </AnchorPane>
+      <Button fx:id="lib_profile" layoutX="25.0" layoutY="94.0" mnemonicParsing="false" opacity="0.8" prefHeight="25.0" prefWidth="107.0" text="Profile" textFill="#835858" />
    </children>
 </AnchorPane>

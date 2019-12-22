@@ -9,12 +9,11 @@
         <VBox alignment="BOTTOM_CENTER" layoutX="441.0" layoutY="225.0" prefHeight="143.0" prefWidth="98.0" spacing="15.0" />
         <TableView fx:id="tableStudent" layoutY="100.0" prefHeight="200.0" prefWidth="600.0">
             <columns>
-                <TableColumn fx:id="col_id_student" onEditCommit="#editID" prefWidth="78.0" text="ID" />
-                <TableColumn fx:id="col_fname_student" onEditCommit="#editFname" prefWidth="154.0" text="First Name" />
-                <TableColumn fx:id="col_lname_student" onEditCommit="#editLname" prefWidth="145.0" text="Last Name" />
-                <TableColumn fx:id="col_year_student" onEditCommit="#editYear" prefWidth="88.0" text="Year" />
-                <TableColumn fx:id="col_department" onEditCommit="#editDepartment" prefWidth="85.0" text="Department" />
-                <TableColumn fx:id="col_select_student" prefWidth="49.0" text="Select" />
+                <TableColumn fx:id="col_id_student" onEditCommit="#editID" prefWidth="83.0" text="ID" />
+                <TableColumn fx:id="col_fname_student" onEditCommit="#editFname" prefWidth="147.0" text="First Name" />
+                <TableColumn fx:id="col_lname_student" onEditCommit="#editLname" prefWidth="153.0" text="Last Name" />
+                <TableColumn fx:id="col_year_student" onEditCommit="#editYear" prefWidth="107.0" text="Year" />
+                <TableColumn fx:id="col_department" onEditCommit="#editDepartment" prefWidth="109.0" text="Department" />
             </columns>
         </TableView>
         <HBox alignment="CENTER" layoutX="47.0" layoutY="56.0" prefHeight="31.0" prefWidth="507.0" spacing="15.0">

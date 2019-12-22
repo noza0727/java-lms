@@ -9,11 +9,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -52,7 +50,6 @@ public class LibrarianTable implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         try {
             conn = DriverManager.getConnection(
                     "jdbc:mysql://" + dbHost +":"+dbPort+"/"+dbPath,
@@ -61,7 +58,6 @@ public class LibrarianTable implements Initializable{
             ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM librarians");
             int i = 0;
             while(rs.next()) {
-                //CheckBox ch = new CheckBox(""+(i++));
                 list_lib.add(new LibrarianDetails(rs.getString(1),
                         rs.getString(2),
                         rs.getString(3)));
@@ -73,11 +69,31 @@ public class LibrarianTable implements Initializable{
         col_id_lib.setCellValueFactory(new PropertyValueFactory<LibrarianDetails, String>("id"));
         col_fname_lib.setCellValueFactory(new PropertyValueFactory<LibrarianDetails, String>("firstname"));
         col_lname_lib.setCellValueFactory(new PropertyValueFactory<LibrarianDetails, String>("lastname"));
-        //col_select_lib.setCellValueFactory(new PropertyValueFactory<LibrarianDetails, CheckBox>("checkBox"));
         tableLibrarian.setItems(list_lib);
+        tableLibrarian.setEditable(true);
+
+        col_fname_lib.setCellFactory(TextFieldTableCell.forTableColumn());
+        col_id_lib.setCellFactory(TextFieldTableCell.forTableColumn());
+        col_lname_lib.setCellFactory(TextFieldTableCell.forTableColumn());
 
     }
 
+    private void detailsOnTable(){
+        try {
+            ResultSet rs2 = conn.createStatement().executeQuery("SELECT * FROM librarians");
+            while(rs2.next()) {
+                list_lib.add(new LibrarianDetails(rs2.getString(1),
+                        rs2.getString(2),
+                        rs2.getString(3)));
+            }
+        }catch(SQLException e){
+            Logger.getLogger(TableBooks.class.getName()).log(Level.SEVERE,null,e);
+        }
+
+        col_id_lib.setCellValueFactory(new PropertyValueFactory<LibrarianDetails, String>("id"));
+        col_fname_lib.setCellValueFactory(new PropertyValueFactory<LibrarianDetails, String>("firstname"));
+        col_lname_lib.setCellValueFactory(new PropertyValueFactory<LibrarianDetails, String>("lastname"));
+    }
     public void createConnection(){
         try {
             conn = DriverManager.getConnection(
@@ -102,11 +118,7 @@ public class LibrarianTable implements Initializable{
         stage2.show();
 
 
-
-
     }
-
-
 
 
     public void setBtn_search_lib(){
@@ -124,5 +136,106 @@ public class LibrarianTable implements Initializable{
         lib_pass_add.clear();
         lib_Lname_add.clear();
         lib_Fname_add.clear();
+    }
+
+    public void editIDlib(TableColumn.CellEditEvent editid){
+        LibrarianDetails libselected = tableLibrarian.getSelectionModel().getSelectedItem();
+
+        TablePosition pos =tableLibrarian.getSelectionModel().getSelectedCells().get(0);
+        int row = pos.getRow();
+        LibrarianDetails item = tableLibrarian.getItems().get(row);
+        TableColumn col = pos.getTableColumn();
+
+        String data1 = (String) col.getCellObservableValue(item).getValue();
+        System.out.println(data1);
+
+        libselected.setId(editid.getNewValue().toString());
+
+        String data2 = (String) col.getCellObservableValue(item).getValue();
+        System.out.println(data2);
+
+        try {
+            Connection con = Database.getConnection();
+            Statement stmt = con.createStatement();
+            stmt.executeUpdate("UPDATE students set `id` ='"+data2+"' where id = '"
+                    +item.getId()+"'");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void editFnameLib(TableColumn.CellEditEvent editfname){
+        LibrarianDetails libselected = tableLibrarian.getSelectionModel().getSelectedItem();
+
+        TablePosition pos =tableLibrarian.getSelectionModel().getSelectedCells().get(0);
+        int row = pos.getRow();
+        LibrarianDetails item = tableLibrarian.getItems().get(row);
+        TableColumn col = pos.getTableColumn();
+
+        String data1 = (String) col.getCellObservableValue(item).getValue();
+        System.out.println(data1);
+
+        libselected.setFirstname(editfname.getNewValue().toString());
+
+        String data2 = (String) col.getCellObservableValue(item).getValue();
+        System.out.println(data2);
+
+        try {
+            Connection con = Database.getConnection();
+            Statement stmt = con.createStatement();
+            stmt.executeUpdate("UPDATE students set FirstName ='"+data2+"' where id = '"
+                    +item.getId()+"'");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void editLnameLib(TableColumn.CellEditEvent editlname){
+        LibrarianDetails libselected = tableLibrarian.getSelectionModel().getSelectedItem();
+
+        TablePosition pos =tableLibrarian.getSelectionModel().getSelectedCells().get(0);
+        int row = pos.getRow();
+        LibrarianDetails item = tableLibrarian.getItems().get(row);
+        TableColumn col = pos.getTableColumn();
+
+        String data1 = (String) col.getCellObservableValue(item).getValue();
+        System.out.println(data1);
+
+        libselected.setLastname(editlname.getNewValue().toString());
+
+        String data2 = (String) col.getCellObservableValue(item).getValue();
+        System.out.println(data2);
+
+        try {
+            Connection con = Database.getConnection();
+            Statement stmt = con.createStatement();
+            stmt.executeUpdate("UPDATE students set LastName ='"+data2+"' where id = '"
+                    +item.getId()+"'");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteLib(){
+        LibrarianDetails libselected = tableLibrarian.getSelectionModel().getSelectedItem();
+
+        TablePosition pos =tableLibrarian.getSelectionModel().getSelectedCells().get(0);
+        int row = pos.getRow();
+        LibrarianDetails item = tableLibrarian.getItems().get(row);
+        //TableColumn col = pos.getTableColumn();
+        try {
+            if(libselected!=null){
+                PreparedStatement statement = conn.prepareStatement("DELETE FROM librarians WHERE id = ?");
+                statement.setString(1, item.getId());
+                statement.executeUpdate();
+            }
+            else
+                System.out.println("its null awe");
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+
     }
 }

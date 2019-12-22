@@ -20,6 +20,8 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import static Library.Configs.*;
+
 public class TableBooks implements Initializable {
     @FXML
     private TableView<BookDetails> table;
@@ -37,12 +39,12 @@ public class TableBooks implements Initializable {
     private TableColumn<BookDetails, String> colstatus;
 
     ObservableList<BookDetails> list = FXCollections.observableArrayList();
-
+    Connection con;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            Connection con = Database.getConnection();
+            con = Database.getConnection();
             ResultSet rs = con.createStatement().executeQuery("SELECT * FROM books");
 
             while (rs.next()) {
@@ -128,7 +130,7 @@ public class TableBooks implements Initializable {
             Connection con = Database.getConnection();
             Statement stmt = con.createStatement();
             stmt.executeUpdate("UPDATE books set title='"+data2+"' where title like '"
-                    +data1+"'");
+                    +data1+"' and isbn='"+item.getIsbn()+"'");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -154,7 +156,7 @@ public class TableBooks implements Initializable {
             Connection con = Database.getConnection();
             Statement stmt = con.createStatement();
             stmt.executeUpdate("UPDATE books set author='"+data2+"' where author like '"
-                    +data1+"'");
+                    +data1+"' and isbn='"+item.getIsbn()+"'");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -180,7 +182,7 @@ public class TableBooks implements Initializable {
             Connection con = Database.getConnection();
             Statement stmt = con.createStatement();
             stmt.executeUpdate("UPDATE books set genre='"+data2+"' where genre like '"
-                    +data1+"'");
+                    +data1+"' and isbn='"+item.getIsbn()+"'");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -232,7 +234,7 @@ public class TableBooks implements Initializable {
             Connection con = Database.getConnection();
             Statement stmt = con.createStatement();
             stmt.executeUpdate("UPDATE books set isAvailable='"+data2+"' where isAvailable like '"
-                    +data1+"'");
+                    +data1+"' and isbn='"+item.getIsbn()+"'");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -258,10 +260,32 @@ public class TableBooks implements Initializable {
             Connection con = Database.getConnection();
             Statement stmt = con.createStatement();
             stmt.executeUpdate("UPDATE books set publish_year='"+data2+"' where publish_year like '"
-                    +data1+"'");
+                    +data1+"' and isbn='"+item.getIsbn()+"'");
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public void deleteLib(){
+        BookDetails libselected = table.getSelectionModel().getSelectedItem();
+        TablePosition pos =table.getSelectionModel().getSelectedCells().get(0);
+        int row = pos.getRow();
+        BookDetails item = table.getItems().get(row);
+        try {
+            if(libselected!=null){
+                PreparedStatement statement = con.prepareStatement("DELETE FROM books WHERE isbn = ?");
+                statement.setString(1, item.getIsbn());
+                statement.executeUpdate();
+            }
+            else
+                System.out.println("its null awe");
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+
     }
 }
 

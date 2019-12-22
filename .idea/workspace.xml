@@ -2,46 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ca3e388-f4c6-4f05-8db9-160872a72f42" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Library/AddLibrarianController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Library/AddStudentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Library/BookDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Library/BooksAdmin.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Library/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Library/LibAdmin.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Library/LibrarianTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Library/MyBooks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Library/StudentAdmin.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Library/StudentDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Library/StudentsTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Library/TableBooks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/AddLibrarian.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/AddLibrarian.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/AddStudent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/AddStudent.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/Admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/Admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/AdminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/DefaultPane.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/BooksAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/BooksAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/LibAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/LibAdmin.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/Librarian.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/Librarian.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/LibrarianController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/LibrarianController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/LibrarianDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/LibrarianDetails.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/ModifyLib.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/ModifyLib.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/LibrarianTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/LibrarianTable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/Student.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/Student.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/StudentAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/StudentAdmin.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Library_Project/Library/StudentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Library_Project/Library/StudentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/AddLibrarian.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/AddLibrarian.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/AddStudent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/AddStudent.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/Admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Admin.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Library/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/DefaultPane.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/AdminProfile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/Librarian.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Librarian.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/LibrarianController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/LibrarianController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/LibrarianDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/LibrarianDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/ModifyLib.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/ModifyLib.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/Student.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/Student.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Library/BooksAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/BooksAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Library/LibAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/LibAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Library/LibrarianTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/LibrarianTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Library/StudentAdmin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/StudentAdmin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Library/StudentsTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/StudentsTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Library/TableBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library/TableBooks.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +146,7 @@
       <workItem from="1576883070586" duration="816000" />
       <workItem from="1576883962450" duration="245000" />
       <workItem from="1576885754969" duration="28812000" />
-      <workItem from="1576919784086" duration="41782000" />
+      <workItem from="1576919784086" duration="47955000" />
     </task>
     <servers />
   </component>
@@ -211,22 +186,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="117" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1576914755519" />
-    <state width="1322" height="36" key="GridCell.Tab.0.bottom" timestamp="1577003089024">
+    <state width="1322" height="-28" key="GridCell.Tab.0.bottom" timestamp="1577009696448">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="36" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577003089024" />
-    <state width="1322" height="36" key="GridCell.Tab.0.center" timestamp="1577003089023">
+    <state width="1322" height="-28" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1577009696448" />
+    <state width="1322" height="-28" key="GridCell.Tab.0.center" timestamp="1577009696447">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="36" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577003089023" />
-    <state width="1322" height="36" key="GridCell.Tab.0.left" timestamp="1577003089023">
+    <state width="1322" height="-28" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1577009696447" />
+    <state width="1322" height="-28" key="GridCell.Tab.0.left" timestamp="1577009696447">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="36" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577003089023" />
-    <state width="1322" height="36" key="GridCell.Tab.0.right" timestamp="1577003089024">
+    <state width="1322" height="-28" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1577009696447" />
+    <state width="1322" height="-28" key="GridCell.Tab.0.right" timestamp="1577009696448">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1322" height="36" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577003089024" />
+    <state width="1322" height="-28" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1577009696448" />
     <state width="1322" height="74" key="GridCell.Tab.1.bottom" timestamp="1576937602832">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
