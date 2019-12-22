@@ -3,6 +3,8 @@ package Library;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,7 +34,7 @@ public class LibrarianTable implements Initializable{
     private ResultSet rs;
 
     @FXML
-    private TextField lib_ID_add, lib_pass_add, lib_Fname_add, lib_Lname_add;
+    private TextField searchField, lib_ID_add, lib_pass_add, lib_Lname_add, lib_Fname_add;
     @FXML
     private TableView<LibrarianDetails> tableLibrarian;
     @FXML
@@ -75,6 +77,27 @@ public class LibrarianTable implements Initializable{
         col_fname_lib.setCellFactory(TextFieldTableCell.forTableColumn());
         col_id_lib.setCellFactory(TextFieldTableCell.forTableColumn());
         col_lname_lib.setCellFactory(TextFieldTableCell.forTableColumn());
+
+        FilteredList<LibrarianDetails> filteredList = new FilteredList<>(list_lib, e -> true);
+        searchField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredList.setPredicate(librarian -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (librarian.getFirstname().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;
+                } else if (librarian.getLastname().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;
+                } else if (librarian.getId().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;
+                } else
+                    return false;
+            });
+            SortedList<LibrarianDetails> sortedData = new SortedList<>(filteredList);
+            sortedData.comparatorProperty().bind(tableLibrarian.comparatorProperty());
+            tableLibrarian.setItems(sortedData);
+        });
 
     }
 

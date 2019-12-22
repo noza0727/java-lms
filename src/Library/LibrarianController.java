@@ -8,10 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -26,6 +23,7 @@ public class LibrarianController implements Initializable {
 
     private static Connection conn;
     private static Statement stmt;
+    private static ResultSet rs;
     private static String window_loc = null;
 
     @FXML
@@ -36,6 +34,11 @@ public class LibrarianController implements Initializable {
 
     @FXML
     private ToggleButton btn_student_lib, btn_book_lib;
+
+    @FXML
+    private TextField studentID, bookIsbn;
+    @FXML
+    private Label libNameField, libIdField;
 
     @FXML
     public void handleCloseButton(){
@@ -69,10 +72,22 @@ public class LibrarianController implements Initializable {
 
     }
 
+    private String libuserID = Controller.getLibID;
+    private String fn,ln;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        libIdField.setText(libuserID);
         createConnection();
-
+        try {
+            rs = stmt.executeQuery("select * from librarians where id ='"+libuserID+"'");
+            while(rs.next()) {
+                fn = rs.getString("FirstName");
+                ln = rs.getString("LastName");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        libNameField.setText(fn+"  "+ln);
     }
 
 
@@ -84,5 +99,15 @@ public class LibrarianController implements Initializable {
         window.show();
     }
 
+    public void loadIssue(){
+        String studentIssueID = studentID.getText();
+        String bookIssueisbn = bookIsbn.getId();
+
+
+    }
+    public void libProfile() throws IOException {
+
+        anchorLib.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("LibProfile.fxml")));
+    }
 
 }

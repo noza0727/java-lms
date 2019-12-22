@@ -5,6 +5,7 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -50,6 +51,8 @@ public class TableBooks implements Initializable {
     @FXML
     private TableColumn<BookDetails, String> colstatus;
 
+    @FXML
+    private TextField searchField ;
     ObservableList<BookDetails> list = FXCollections.observableArrayList();
     Connection con;
 
@@ -88,6 +91,26 @@ public class TableBooks implements Initializable {
         colyear.setCellFactory(TextFieldTableCell.<BookDetails,Integer>forTableColumn(new IntegerStringConverter()));
         colstatus.setCellFactory(TextFieldTableCell.forTableColumn());
 
+        FilteredList<BookDetails> filteredList = new FilteredList<>(list, e -> true);
+        searchField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredList.setPredicate(books -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (books.getTitle().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;
+                } else if (books.getAuthor().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;
+                } else if (books.getGenre().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;
+                } else
+                    return false;
+            });
+            SortedList<BookDetails>sortedData = new SortedList<>(filteredList);
+            sortedData.comparatorProperty().bind(table.comparatorProperty());
+            table.setItems(sortedData);
+        });
     }
 
     public void delete(ActionEvent actionEvent) {
@@ -307,7 +330,7 @@ public class TableBooks implements Initializable {
         stageforadd.show();
     }
 
-    
+
 }
 
 

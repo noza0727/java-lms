@@ -59,11 +59,8 @@ public class AdminController implements Initializable {
     private ToggleButton btn_student, btn_lib, btn_book;
 
 
-
     @FXML
-    private Button logOut_admin;
-
-
+    private Label idField, nameField;
 
     @FXML
     private Button lib_cancel_add;
@@ -93,12 +90,26 @@ public class AdminController implements Initializable {
         //createConnection();
     }
 
+    String userId = Controller.getAdminID;
+    String fn, ln;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        idField.setText(userId);
+        createConnection();
+        try {
+            rs = stmt.executeQuery("select * from admins where ID ='"+userId+"'");
+            while(rs.next()) {
+                fn = rs.getString("FirstName");
+                ln = rs.getString("LastName");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+       nameField.setText(fn+"  "+ln);
 
     }
+
 
 
     public void userHandler(ActionEvent e) throws IOException {
@@ -136,4 +147,8 @@ public class AdminController implements Initializable {
         window.show();
     }
 
+    public void adminProfile() throws IOException {
+
+        anchorPane.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("AdminProfile.fxml")));
+    }
 }

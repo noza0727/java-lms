@@ -81,7 +81,9 @@ public class Controller implements Initializable {
 
 
 
-    static String getID;
+    public static String getID;
+    public static String getAdminID;
+    public static String getLibID;
 
     private void signInAs() throws IOException {
         createConnection();
@@ -103,21 +105,21 @@ public class Controller implements Initializable {
                 ResultSet result_student = pstmt_student.executeQuery();
 
                 if(result_admin.next()){
+                    getAdminID=signIn_ID;
                    window_loc = "Admin.fxml";
 
                 }
                 else if(result_lib.next()){
+                    getLibID = signIn_ID;
                     window_loc = "Librarian.fxml";
                 }
                 else if(result_student.next()){
-                    window_loc = "Student.fxml";
                     getID = signIn_ID;
-
+                    window_loc = "Student.fxml";
                 }
                 else{
                     window_loc=null;
                     error_field.setText("Please enter a valid user");
-
                 }
 
             }catch (SQLException ex){

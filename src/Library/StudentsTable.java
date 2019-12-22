@@ -5,14 +5,13 @@ import javafx.beans.Observable;
 import javafx.beans.property.Property;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TablePosition;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.AnchorPane;
@@ -48,8 +47,9 @@ public class StudentsTable implements Initializable {
     private TableColumn<StudentDetails, String> col_year_student;
     @FXML
     private TableColumn<StudentDetails, String> col_department;
+
     @FXML
-    private TableColumn<StudentDetails, CheckBox> col_select_student;
+    private TextField searchField;
 
     private ObservableList<StudentDetails> list_student = FXCollections.observableArrayList();;
 
@@ -69,11 +69,9 @@ public class StudentsTable implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             createConnection();
-            String sqlData = "SELECT `ID`, `FirstName`, `LastName`, `Year`, `Department` FROM `students`";
+            String sqlData = "SELECT * FROM students";
             rs = conn.createStatement().executeQuery(sqlData);
-            int i = 0;
             while (rs.next()) {
-                CheckBox ch2 = new CheckBox("" + (i++));
                StudentDetails student = new StudentDetails(rs.getString("ID"),
                        rs.getString("FirstName"), rs.getString("LastName"),
                        rs.getString("Year"), rs.getString("Department"));
@@ -85,7 +83,6 @@ public class StudentsTable implements Initializable {
             col_lname_student.setCellValueFactory(new PropertyValueFactory<>("studentLname"));
             col_year_student.setCellValueFactory(new PropertyValueFactory<>("studentYear"));
             col_department.setCellValueFactory(new PropertyValueFactory<>("studentDepartment"));
-            //col_select_student.setCellValueFactory(new PropertyValueFactory<>("checkBox"));
             tableStudent.setItems(list_student);
             tableStudent.setEditable(true);
 
@@ -94,6 +91,31 @@ public class StudentsTable implements Initializable {
             col_lname_student.setCellFactory(TextFieldTableCell.forTableColumn());
             col_year_student.setCellFactory(TextFieldTableCell.forTableColumn());
             col_department.setCellFactory(TextFieldTableCell.forTableColumn());
+
+            FilteredList<StudentDetails> filteredList = new FilteredList<>(list_student, e -> true);
+            searchField.textProperty().addListener((observable, oldValue, newValue) -> {
+                filteredList.setPredicate(student -> {
+                    if (newValue == null || newValue.isEmpty()) {
+                        return true;
+                    }
+                    String lowerCaseFilter = newValue.toLowerCase();
+                    if (student.getStudentFname().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                        return true;
+                    } else if (student.getStudentLname().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                        return true;
+                    } else if (student.getStudentID().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                        return true;
+                    } else if (student.getStudentDepartment().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                        return true;
+                    }else if (student.getStudentYear().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                        return true;
+                    }else
+                        return false;
+                });
+                SortedList<StudentDetails> sortedData = new SortedList<>(filteredList);
+                sortedData.comparatorProperty().bind(tableStudent.comparatorProperty());
+                tableStudent.setItems(sortedData);
+            });
 
 
         } catch (SQLException ex) {

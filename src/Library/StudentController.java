@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
@@ -46,9 +47,8 @@ public class StudentController implements  Initializable{
     private Label name_show;
     @FXML
     private Label id_show;
-    @FXML
+
     private String f;
-    @FXML
     private String l;
 
     public void createConnection(){
@@ -66,49 +66,28 @@ public class StudentController implements  Initializable{
     ObservableList<BookDetails> books;
 
     @FXML
+    private TableView myBookTable;
+    @FXML
     private TableColumn<BookDetails, String> colid, coltitle,colauthor,colstatus,colgenre;
 
     @FXML
     private TableColumn<BookDetails, Integer> colyear;
-
+    String y = Controller.getID;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        id_show.setText(Controller.getID);
+        id_show.setText(y);
         try {
-            rs=stmt.executeQuery("select FirstName , LastName from students where ID = '"+Controller.getID+"'");
-            f = rs.getString("FirstName");
-            l = rs.getString("LastName");
-            name_show.setText(f+"  "+l);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        String b1,b2,b3,b4,b5;
-
-        /*try {
-            Connection con = Database.getConnection();
-            ResultSet rs = con.createStatement().executeQuery("SELECT book1, book2, book3, book4, book5 FROM students where ID ='"+Controller.getID+"'");
-            b1 = rs.getString("book1");
-            b2 = rs.getString("book2");
-            b3 = rs.getString("book3");
-            b4 = rs.getString("book4");
-            b5 = rs.getString("book5");
-            mybooks.add(b1);
-            mybooks.add(b2);
-            mybooks.add(b3);
-            mybooks.add(b4);
-            mybooks.add(b5);
-
-            ResultSet rs2;
-            for(int i = 1; i<=5; i++){
-                rs2 = con.createStatement().executeQuery("select * from books where isbn ='"+b1+"'");
-
+            rs3 = stmt.executeQuery("select * from students where ID='" + y + "'");
+            while (rs3.next()) {
+                String f = rs3.getString("FirstName");
+                String l = rs3.getString("LastName");
+                name_show.setText(f + "  " + l);
             }
 
-
         } catch (SQLException e) {
-            Logger.getLogger(TableBooks.class.getName()).log(Level.SEVERE,null,e);
-        }*/
+            e.printStackTrace();
 
+        }
     }
 
     public void signOut(ActionEvent event) throws IOException {

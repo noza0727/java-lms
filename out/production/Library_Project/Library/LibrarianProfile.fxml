@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.LibrarianController">
+    <children>
+        <Label layoutX="171.0" layoutY="228.0" prefHeight="35.0" prefWidth="86.0" text="ID" textFill="#835858">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="libIdField" layoutX="265.0" layoutY="228.0" prefHeight="35.0" prefWidth="275.0" textFill="#835858">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="171.0" layoutY="263.0" prefHeight="35.0" prefWidth="72.0" text="Librarian" textFill="#835858">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="libNameField" layoutX="265.0" layoutY="263.0" prefHeight="35.0" prefWidth="275.0" textFill="#835858">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="176.0" fitWidth="181.0" layoutX="140.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@icons/170226-200.png" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>
