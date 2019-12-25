@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="mysql1">
+    <CLASSES>
+      <root url="file://C:/xampp/mysql" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://C:/xampp/mysql" recursive="false" />
+  </library>
+</component>

@@ -46,8 +46,8 @@ public class Controller implements Initializable {
                     dbUser, dbPass);
             stmt = conn.createStatement();
             pstmt_admin = conn.prepareStatement("SELECT ID AND Password FROM admins WHERE ID= ? AND Password=?");
-            pstmt_lib = conn.prepareStatement("SELECT ID AND Password FROM librarians WHERE ID= ? AND Password=?");
-            pstmt_student = conn.prepareStatement("SELECT ID AND Password FROM students WHERE ID= ? AND Password=?");
+            pstmt_lib = conn.prepareStatement("SELECT id AND password FROM librarians WHERE id= ? AND password=?");
+            pstmt_student = conn.prepareStatement("SELECT id AND password FROM students WHERE id= ? AND Password=?");
         }catch(SQLException ex){
             System.err.println(ex);
         }
@@ -61,9 +61,10 @@ public class Controller implements Initializable {
 
     public void signIn_action(ActionEvent event) {
         try {
-
             signInAs();
             if(window_loc!=null) {
+                ID_signIn.clear();
+                pass_signIn.clear();
                 Parent newWindow = FXMLLoader.load(getClass().getResource(window_loc));
                 Scene newScene = new Scene(newWindow);
                 Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -86,10 +87,11 @@ public class Controller implements Initializable {
     public static String getLibID;
 
     private void signInAs() throws IOException {
+        String signIn_ID = "";
+        String signIn_pass = "";
         createConnection();
-        String signIn_ID = ID_signIn.getText().trim();
-        String signIn_pass = pass_signIn.getText().trim();
-
+        signIn_ID = ID_signIn.getText().trim();
+        signIn_pass = pass_signIn.getText().trim();
         if(!signIn_ID.isEmpty() && !signIn_pass.isEmpty()){
             try{
                 pstmt_admin.setString(1,ID_signIn.getText().trim());
@@ -106,7 +108,7 @@ public class Controller implements Initializable {
 
                 if(result_admin.next()){
                     getAdminID=signIn_ID;
-                   window_loc = "Admin.fxml";
+                    window_loc = "Admin.fxml";
 
                 }
                 else if(result_lib.next()){
@@ -134,6 +136,5 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
     }
 }

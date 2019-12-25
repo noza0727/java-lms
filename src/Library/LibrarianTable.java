@@ -101,22 +101,6 @@ public class LibrarianTable implements Initializable{
 
     }
 
-    private void detailsOnTable(){
-        try {
-            ResultSet rs2 = conn.createStatement().executeQuery("SELECT * FROM librarians");
-            while(rs2.next()) {
-                list_lib.add(new LibrarianDetails(rs2.getString(1),
-                        rs2.getString(2),
-                        rs2.getString(3)));
-            }
-        }catch(SQLException e){
-            Logger.getLogger(TableBooks.class.getName()).log(Level.SEVERE,null,e);
-        }
-
-        col_id_lib.setCellValueFactory(new PropertyValueFactory<LibrarianDetails, String>("id"));
-        col_fname_lib.setCellValueFactory(new PropertyValueFactory<LibrarianDetails, String>("firstname"));
-        col_lname_lib.setCellValueFactory(new PropertyValueFactory<LibrarianDetails, String>("lastname"));
-    }
     public void createConnection(){
         try {
             conn = DriverManager.getConnection(
@@ -144,15 +128,6 @@ public class LibrarianTable implements Initializable{
     }
 
 
-    public void setBtn_search_lib(){
-        String data_lib = field_search_lib.getText();
-        createConnection();
-        String search = "select * from librarians where ID = '"+
-                data_lib+"' OR FirstName like '"+
-                data_lib + "' OR LastName like '"+
-                data_lib +"'";
-
-    }
 
     public void clearAdd(){
         lib_ID_add.clear();
@@ -261,4 +236,6 @@ public class LibrarianTable implements Initializable{
         }
 
     }
+
+
 }

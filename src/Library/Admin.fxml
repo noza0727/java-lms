@@ -34,33 +34,35 @@
         </font>
     </Label>
     <AnchorPane fx:id="anchorPane" layoutX="154.0" layoutY="107.0" prefHeight="400.0" prefWidth="650.0">
-      <children>
-         <Label layoutX="168.0" layoutY="228.0" prefHeight="35.0" prefWidth="79.0" text="Admin ID:" textFill="#835858">
-            <font>
-               <Font size="15.0" />
-            </font>
-         </Label>
-         <Label fx:id="idField" layoutX="265.0" layoutY="228.0" prefHeight="35.0" prefWidth="275.0" textFill="#835858">
-            <font>
-               <Font name="System Bold" size="15.0" />
-            </font>
-         </Label>
-         <Label layoutX="171.0" layoutY="263.0" prefHeight="35.0" prefWidth="72.0" text="Admin: " textFill="#835858">
-            <font>
-               <Font size="15.0" />
-            </font>
-         </Label>
-         <Label fx:id="nameField" layoutX="265.0" layoutY="263.0" prefHeight="35.0" prefWidth="275.0" textFill="#835858">
-            <font>
-               <Font name="System Bold" size="15.0" />
-            </font>
-         </Label>
-         <ImageView fitHeight="176.0" fitWidth="181.0" layoutX="140.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@icons/admin-settings-male.png" />
-            </image>
-         </ImageView>
-      </children></AnchorPane>
+        <children>
+            <Label layoutX="168.0" layoutY="228.0" prefHeight="35.0" prefWidth="79.0" text="Admin ID:" textFill="#835858">
+                <font>
+                    <Font size="15.0" />
+                </font>
+            </Label>
+            <Label fx:id="idField" layoutX="265.0" layoutY="228.0" prefHeight="35.0" prefWidth="275.0" textFill="#835858">
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Label>
+            <Label layoutX="171.0" layoutY="263.0" prefHeight="35.0" prefWidth="72.0" text="Admin: " textFill="#835858">
+                <font>
+                    <Font size="15.0" />
+                </font>
+            </Label>
+            <Label fx:id="nameField" layoutX="265.0" layoutY="263.0" prefHeight="35.0" prefWidth="275.0" textFill="#835858">
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Label>
+            <ImageView fitHeight="176.0" fitWidth="181.0" layoutX="140.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@icons/admin-settings-male.png" />
+                </image>
+            </ImageView>
+        </children>
+
+    </AnchorPane>
     <ToggleButton layoutX="694.0" layoutY="52.0" mnemonicParsing="false" onAction="#signOut" prefHeight="35.0" prefWidth="79.0" text="Sign Out" textFill="#835858">
       <font>
          <Font size="13.0" />

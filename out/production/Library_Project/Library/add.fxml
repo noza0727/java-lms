@@ -1,87 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="404.0" prefWidth="307.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.AddController">
+<AnchorPane prefHeight="436.0" prefWidth="392.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.AddController">
    <children>
-      <VBox layoutX="6.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="433.0">
-          <children>
-              <TextField fx:id="isbn" opacity="0.84" promptText="ISBN">
+      <VBox layoutX="68.0" layoutY="58.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="241.0" spacing="15.0">
+         <children>
+              <TextField fx:id="isbn" opacity="0.84" prefHeight="35.0" prefWidth="241.0" promptText="ISBN">
                   <font>
-                      <Font name="Segoe UI" size="16.0" />
+                      <Font name="Segoe UI" size="14.0" />
                   </font>
-                  <VBox.margin>
-                      <Insets left="100.0" right="100.0" top="20.0" />
-                  </VBox.margin>
               </TextField>
-              <TextField fx:id="title" layoutX="10.0" layoutY="10.0" opacity="0.84" promptText="Title">
+            <TextField fx:id="bookid" prefHeight="35.0" promptText="ID">
+               <font>
+                  <Font name="Segoe UI" size="14.0" />
+               </font></TextField>
+              <TextField fx:id="title" opacity="0.84" prefHeight="35.0" promptText="Title">
                   <font>
-                      <Font name="Segoe UI" size="16.0" />
+                      <Font name="Segoe UI" size="14.0" />
                   </font>
-                  <VBox.margin>
-                      <Insets left="100.0" right="100.0" top="20.0" />
-                  </VBox.margin>
               </TextField>
-              <TextField fx:id="author" layoutX="10.0" layoutY="10.0" opacity="0.84" promptText="Author">
+              <TextField fx:id="author" opacity="0.84" prefHeight="35.0" promptText="Author">
                   <font>
-                      <Font name="Segoe UI" size="16.0" />
+                      <Font name="Segoe UI" size="14.0" />
                   </font>
-                  <VBox.margin>
-                      <Insets left="100.0" right="100.0" top="20.0" />
-                  </VBox.margin>
               </TextField>
-              <TextField fx:id="subject" layoutX="10.0" layoutY="60.0" opacity="0.84" promptText="Subject">
+              <TextField fx:id="year" opacity="0.84" prefHeight="35.0" promptText="Year of Publication">
                   <font>
-                      <Font name="Segoe UI" size="16.0" />
+                      <Font name="Segoe UI" size="14.0" />
                   </font>
-                  <VBox.margin>
-                      <Insets left="100.0" right="100.0" top="20.0" />
-                  </VBox.margin>
               </TextField>
-              <TextField fx:id="year" layoutX="10.0" layoutY="60.0" opacity="0.84" promptText="Year of Publication">
+              <TextField fx:id="subject" opacity="0.84" prefHeight="35.0" promptText="Subject">
                   <font>
-                      <Font name="Segoe UI" size="16.0" />
+                      <Font name="Segoe UI" size="14.0" />
                   </font>
-                  <VBox.margin>
-                      <Insets left="100.0" right="100.0" top="20.0" />
-                  </VBox.margin>
               </TextField>
-              <TextField fx:id="isAvailable" layoutX="10.0" layoutY="110.0" opacity="0.84" promptText="Available?">
+              <TextField fx:id="amount" opacity="0.84" prefHeight="35.0" promptText="Amaunt">
                   <font>
-                      <Font name="Segoe UI" size="16.0" />
+                      <Font name="Segoe UI" size="14.0" />
                   </font>
-                  <VBox.margin>
-                      <Insets left="100.0" right="100.0" top="20.0" />
-                  </VBox.margin>
               </TextField>
-              <HBox prefHeight="50.0" prefWidth="465.0">
-                  <VBox.margin>
-                      <Insets top="20.0" />
-                  </VBox.margin>
-                  <children>
-                      <Button fx:id="cancel" alignment="CENTER" cancelButton="true" mnemonicParsing="false" onMouseClicked="#close" prefHeight="34.0" prefWidth="83.0" text="Reset">
-                          <HBox.margin>
-                              <Insets left="125.0" top="10.0" />
-                          </HBox.margin>
-                          <font>
-                              <Font name="System Bold" size="14.0" />
-                          </font>
-                      </Button>
-                      <Button fx:id="save" alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#save" prefHeight="34.0" prefWidth="83.0" text="Save">
-                          <font>
-                              <Font name="System Bold" size="14.0" />
-                          </font>
-                          <HBox.margin>
-                              <Insets left="80.0" top="10.0" />
-                          </HBox.margin>
-                      </Button>
-                  </children>
-              </HBox>
-          </children>
+         </children>
       </VBox>
+      <HBox layoutX="71.0" layoutY="391.0" prefHeight="38.0" prefWidth="235.0" spacing="70.0">
+         <children>
+                <Button fx:id="cancel" alignment="CENTER" cancelButton="true" mnemonicParsing="false" onMouseClicked="#close" prefHeight="34.0" prefWidth="83.0" text="Clear" textFill="#835858">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="save" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#save" prefHeight="34.0" prefWidth="83.0" text="Save" textFill="#835858">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+         </children>
+      </HBox>
+      <Label layoutX="153.0" layoutY="14.0" text="Add Book" textFill="#835858">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

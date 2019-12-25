@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="sql">
+    <ANNOTATIONS>
+      <root url="file://C:/xampp/phpMyAdmin/sql" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://C:/xampp/phpMyAdmin/sql" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://C:/xampp/phpMyAdmin/sql" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="file://C:/xampp/phpMyAdmin/sql" />
+    </NATIVE>
+    <SOURCES>
+      <root url="file://C:/xampp/phpMyAdmin/sql" />
+    </SOURCES>
+    <jarDirectory url="file://C:/xampp/phpMyAdmin/sql" recursive="false" />
+    <jarDirectory url="file://C:/xampp/phpMyAdmin/sql" recursive="false" type="SOURCES" />
+  </library>
+</component>

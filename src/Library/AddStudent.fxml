@@ -44,6 +44,6 @@
             <font>
                 <Font name="System Bold" size="12.0" />
             </font></Button>
-      <Label fx:id="add_student_info" alignment="CENTER" layoutX="98.0" layoutY="319.0" prefHeight="28.0" prefWidth="283.0" textFill="#b52626" />
+      <Label fx:id="add_student_info" alignment="CENTER" layoutX="98.0" layoutY="319.0" prefHeight="28.0" prefWidth="283.0" textFill="#9e3d4a" />
     </children>
 </AnchorPane>

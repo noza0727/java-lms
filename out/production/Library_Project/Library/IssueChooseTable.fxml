@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="436.0" prefWidth="887.0" style="-fx-background-color: e5dfdf;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.IssueChooseTableController">
+   <children>
+      <VBox layoutX="14.0" layoutY="14.0" prefHeight="413.0" prefWidth="372.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="30.0" prefHeight="32.0" prefWidth="85.0" text="Title " />
+                  <Label layoutX="14.0" layoutY="111.0" prefHeight="32.0" prefWidth="85.0" text="Author" />
+                  <Label layoutX="14.0" layoutY="157.0" prefHeight="32.0" prefWidth="85.0" text="Amount" />
+                  <Label layoutX="14.0" layoutY="72.0" prefHeight="32.0" prefWidth="85.0" text="ISBN" />
+                  <TextField fx:id="bookTitle" editable="false" layoutX="95.0" layoutY="34.0" prefHeight="25.0" prefWidth="161.0" />
+                  <TextField fx:id="bookIsbn" editable="false" layoutX="95.0" layoutY="76.0" prefHeight="25.0" prefWidth="161.0" />
+                  <TextField fx:id="bookAuthor" editable="false" layoutX="95.0" layoutY="115.0" prefHeight="25.0" prefWidth="161.0" />
+                  <TextField fx:id="bookAmount" editable="false" layoutX="95.0" layoutY="161.0" prefHeight="25.0" prefWidth="161.0" />
+               </children>
+            </AnchorPane>
+            <TableView id="bookTable" fx:id="bookTable" prefHeight="200.0" prefWidth="367.0">
+              <columns>
+                <TableColumn fx:id="titleCol" prefWidth="75.0" text="Title" />
+                <TableColumn fx:id="authorCol" prefWidth="75.0" text="Author" />
+                  <TableColumn fx:id="isbnCol" prefWidth="75.0" text="ISBN" />
+                  <TableColumn fx:id="genreCol" prefWidth="75.0" text="Genre" />
+                  <TableColumn fx:id="amountCol" prefWidth="75.0" text="Amount" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+      <VBox layoutX="399.0" layoutY="14.0" prefHeight="413.0" prefWidth="372.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="16.0" layoutY="28.0" prefHeight="32.0" prefWidth="76.0" text="Student ID" />
+                  <Label layoutX="16.0" layoutY="68.0" prefHeight="32.0" prefWidth="76.0" text="Name" />
+                  <Label layoutX="16.0" layoutY="107.0" prefHeight="32.0" prefWidth="76.0" text="Year" />
+                  <Label layoutX="16.0" layoutY="145.0" prefHeight="32.0" prefWidth="76.0" text="Department" />
+                  <TextField fx:id="idInfo" editable="false" layoutX="112.0" layoutY="32.0" />
+                  <TextField fx:id="nameInfo" editable="false" layoutX="112.0" layoutY="72.0" />
+                  <TextField fx:id="yearInfo" editable="false" layoutX="112.0" layoutY="113.0" />
+                  <TextField fx:id="departmentInfo" editable="false" layoutX="112.0" layoutY="153.0" />
+               </children>
+            </AnchorPane>
+            <TableView id="studentTable" fx:id="studentTable" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="idCol" prefWidth="70.0" text="Student ID" />
+                <TableColumn fx:id="fnameCol" text="First Name" />
+                  <TableColumn fx:id="lnameCol" prefWidth="90.0" text="Last Name" />
+                  <TableColumn fx:id="yearCol" prefWidth="54.0" text="Year " />
+                  <TableColumn fx:id="departmentCol" prefWidth="81.0" text="Department" />
+              </columns>
+            </TableView>
+         </children></VBox>
+      <Button layoutX="797.0" layoutY="154.0" mnemonicParsing="false" onAction="#issueSelected" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: #b29d9d;" text="Issue" textFill="#222020">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button layoutX="797.0" layoutY="218.0" mnemonicParsing="false" onAction="#fineSelected" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: #b29d9d;" text="Fine" textFill="#242323">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button layoutX="797.0" layoutY="283.0" mnemonicParsing="false" onAction="#handleCloseButton" prefHeight="32.0" prefWidth="76.0" style="-fx-background-color: #b29d9d;" text="Cancel" textFill="#2f2c2c">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="closeButton" layoutX="858.0" mnemonicParsing="false" onAction="#handleCloseButton" prefHeight="28.0" prefWidth="30.0" style="-fx-background-color: lightGray;" text="X" textFill="#835858">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

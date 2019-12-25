@@ -18,6 +18,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.control.*;
@@ -45,7 +46,6 @@ public class AdminController implements Initializable {
     private  ResultSet rs;
     private static ResultSet rs2;
     private ResultSet rs3;
-    private static String window_loc = null;
     public ToggleGroup usersGroup;
     private PreparedStatement pst;
 
@@ -60,7 +60,10 @@ public class AdminController implements Initializable {
 
 
     @FXML
-    private Label idField, nameField;
+    private Label idField;
+
+    @FXML
+    private Label nameField;
 
     @FXML
     private Button lib_cancel_add;
@@ -87,26 +90,27 @@ public class AdminController implements Initializable {
     public void handleCloseButton(){
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
-        //createConnection();
+
     }
 
     String userId = Controller.getAdminID;
-    String fn, ln;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         idField.setText(userId);
-        createConnection();
-        try {
-            rs = stmt.executeQuery("select * from admins where ID ='"+userId+"'");
-            while(rs.next()) {
-                fn = rs.getString("FirstName");
-                ln = rs.getString("LastName");
+        try{
+            createConnection();
+            rs = stmt.executeQuery("select * from admins where ID='"+userId+"'");
+            while(rs.next()){
+                String f = rs.getString("FirstName");
+                String l = rs.getString("LastName");
+                nameField.setText(f+"  "+l);
             }
-        } catch (SQLException e) {
+        }catch(SQLException e){
+            System.err.println();
             e.printStackTrace();
         }
-       nameField.setText(fn+"  "+ln);
+
 
     }
 
@@ -135,9 +139,6 @@ public class AdminController implements Initializable {
 
     }
 
-    public void show_profile(){
-
-    }
 
     public void signOut(ActionEvent event) throws IOException {
         Parent backwindow = FXMLLoader.load(getClass().getResource("Authorization.fxml"));

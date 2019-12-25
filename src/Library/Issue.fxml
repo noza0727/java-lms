@@ -3,16 +3,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="313.0" prefWidth="494.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.LibrarianController">
+<AnchorPane prefHeight="269.0" prefWidth="496.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.TableBooks">
    <children>
-      <TextField fx:id="studentID" layoutX="137.0" layoutY="81.0" prefHeight="25.0" prefWidth="221.0" promptText="Student ID" />
-      <TextField fx:id="bookIsbn" layoutX="137.0" layoutY="144.0" prefHeight="25.0" prefWidth="221.0" promptText="Book ISBN" />
-      <HBox layoutX="94.0" layoutY="231.0" prefHeight="33.0" prefWidth="308.0" spacing="30.0">
+      <TextField fx:id="issuestudentID" layoutX="132.0" layoutY="102.0" prefHeight="33.0" prefWidth="232.0" promptText="Student ID" />
+      <HBox layoutX="108.0" layoutY="181.0" prefHeight="33.0" prefWidth="281.0" spacing="30.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Clear" />
             <Button mnemonicParsing="false" onAction="#handleCloseButton" prefHeight="35.0" prefWidth="150.0" text="Cancel" />
-            <Button fx:id="issue" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Issue" />
+            <Button fx:id="issue" mnemonicParsing="false" onAction="#loadIssue" prefHeight="35.0" prefWidth="150.0" text="Issue" />
          </children>
       </HBox>
       <Button layoutX="465.0" layoutY="-2.0" mnemonicParsing="false" onAction="#handleCloseButton" prefHeight="25.0" prefWidth="31.0" text="X" textFill="#835858" />

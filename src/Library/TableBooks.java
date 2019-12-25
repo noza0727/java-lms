@@ -1,6 +1,7 @@
 package Library;
 
 
+import com.sun.glass.ui.Window;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -49,10 +50,13 @@ public class TableBooks implements Initializable {
     @FXML
     private TableColumn<BookDetails, Integer> colyear;
     @FXML
-    private TableColumn<BookDetails, String> colstatus;
-
+    private TableColumn<BookDetails,Integer> colstatus;
     @FXML
-    private TextField searchField ;
+    private Button closeButton;
+    @FXML
+    private TextField searchField, issuestudentID ;
+    @FXML
+    private VBox vBox;
     ObservableList<BookDetails> list = FXCollections.observableArrayList();
     Connection con;
 
@@ -68,7 +72,7 @@ public class TableBooks implements Initializable {
                         rs.getInt("publish_year"),
                         rs.getString("genre"),
                         rs.getString("isbn"),
-                        rs.getString("isAvailable")));
+                        rs.getInt("amount")));
             }
         } catch (SQLException e) {
             Logger.getLogger(TableBooks.class.getName()).log(Level.SEVERE, null, e);
@@ -79,9 +83,9 @@ public class TableBooks implements Initializable {
         colauthor.setCellValueFactory(new PropertyValueFactory<>("author"));
         colgenre.setCellValueFactory(new PropertyValueFactory<>("genre"));
         colyear.setCellValueFactory(new PropertyValueFactory<>("yearPublished"));
-        colstatus.setCellValueFactory(new PropertyValueFactory<>("isAvailable"));
-
+        colstatus.setCellValueFactory(new PropertyValueFactory<>("amount"));
         table.setItems(list);
+
         table.setEditable(true);
 
         coltitle.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -89,7 +93,7 @@ public class TableBooks implements Initializable {
         colgenre.setCellFactory(TextFieldTableCell.forTableColumn());
         colid.setCellFactory(TextFieldTableCell.forTableColumn());
         colyear.setCellFactory(TextFieldTableCell.<BookDetails,Integer>forTableColumn(new IntegerStringConverter()));
-        colstatus.setCellFactory(TextFieldTableCell.forTableColumn());
+        colstatus.setCellFactory(TextFieldTableCell.<BookDetails,Integer>forTableColumn(new IntegerStringConverter()));
 
         FilteredList<BookDetails> filteredList = new FilteredList<>(list, e -> true);
         searchField.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -111,41 +115,6 @@ public class TableBooks implements Initializable {
             sortedData.comparatorProperty().bind(table.comparatorProperty());
             table.setItems(sortedData);
         });
-    }
-
-    public void delete(ActionEvent actionEvent) {
-        BookDetails selectedForDeletion = table.getSelectionModel().getSelectedItem();
-        if (selectedForDeletion == null) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText("All fields must be filled");
-            alert.showAndWait();
-            return;
-        }
-        Boolean result = deleteBook(selectedForDeletion);
-        if (result) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText(null);
-            alert.setContentText("Selected book was deleted");
-            alert.showAndWait();
-            list.remove(selectedForDeletion);
-        }
-    }
-
-    public boolean deleteBook(BookDetails books) {
-        String deleteStatement = "DELETE FROM books where ISBN = ?";
-        try {
-            Connection con = Database.getConnection();
-            PreparedStatement stmt = con.prepareStatement(deleteStatement);
-            stmt.setString(1, books.getIsbn());
-            int res = stmt.executeUpdate();
-            if (res == 1) {
-                return true;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
     }
 
 
@@ -257,19 +226,18 @@ public class TableBooks implements Initializable {
         BookDetails item = table.getItems().get(row);
         TableColumn col = pos.getTableColumn();
 
-        String data1 = (String) col.getCellObservableValue(item).getValue();
+        int data1 = (Integer) col.getCellObservableValue(item).getValue();
         System.out.println(data1);
 
-        bookselected.setIsAvailable(editavail.getNewValue().toString());
+        bookselected.setAmount(Integer.parseInt(editavail.getNewValue().toString()));
 
-        String data2 = (String) col.getCellObservableValue(item).getValue();
+        int data2 = (Integer) col.getCellObservableValue(item).getValue();
         System.out.println(data2);
 
         try {
             Connection con = Database.getConnection();
             Statement stmt = con.createStatement();
-            stmt.executeUpdate("UPDATE books set isAvailable='"+data2+"' where isAvailable like '"
-                    +data1+"' and isbn='"+item.getIsbn()+"'");
+            stmt.executeUpdate("UPDATE books set amount='"+data2+"' where isbn='"+item.getIsbn()+"'");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -330,7 +298,18 @@ public class TableBooks implements Initializable {
         stageforadd.show();
     }
 
+    @FXML
+    public void handleCloseButton(){
+        Stage stage = (Stage) closeButton.getScene().getWindow();
+        stage.close();
+    }
 
+    public void issueAccess() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("IssueChooseTable.fxml"));
+        Stage stageIssue = new Stage();
+        stageIssue.setScene(new Scene((Pane) loader.load()));
+        stageIssue.show();
+    }
 }
 
 

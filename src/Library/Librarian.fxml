@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
 <AnchorPane prefHeight="500.0" prefWidth="750.0" style="-fx-background-color: e5dfdf;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.LibrarianController">
    <children>
       <Button fx:id="closeButton" layoutX="721.0" mnemonicParsing="false" onAction="#handleCloseButton" prefHeight="28.0" prefWidth="30.0" style="-fx-background-color: lightGrey;" text="X" textFill="#835858">
@@ -68,5 +67,6 @@
             <Font size="14.0" />
          </font>
       </Button>
+
    </children>
 </AnchorPane>

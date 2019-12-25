@@ -25,7 +25,7 @@ public class AddController implements Initializable {
     @FXML
     private TextField year;
     @FXML
-    private TextField isAvailable;
+    private TextField amount;
 
     private Boolean isModify = Boolean.FALSE;
 
@@ -37,7 +37,7 @@ public class AddController implements Initializable {
         subject.setText(null);
         author.setText(null);
         year.setText(null);
-        isAvailable.setText(null);
+        amount.setText(null);
     }
 
     public void save(MouseEvent mouseEvent) {
@@ -46,19 +46,15 @@ public class AddController implements Initializable {
         String bookAuthor = author.getText();
         String bookSubject = subject.getText();
         int bookYear = Integer.parseInt(year.getText());
-        String bookAvail = isAvailable.getText();
+        int bookAmount = Integer.parseInt(amount.getText());
 
-        if(bookISBN.isEmpty() || bookAvail.isEmpty() || bookTitle.isEmpty() ||
+
+        if(bookISBN.isEmpty() || bookAmount==0 || bookTitle.isEmpty() ||
                 bookSubject.isEmpty() || bookAuthor.isEmpty() || bookYear==0){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("All fields must be filled");
             alert.showAndWait();
-            return;
-        }
-
-        if (isModify){
-            modifyBook();
             return;
         }
 
@@ -68,8 +64,7 @@ public class AddController implements Initializable {
                 "'" + bookAuthor + "'," +
                 "'" + bookSubject + "'," +
                 "'" + bookYear + "'," +
-                "'" + bookAvail + "'" +
-                ")";
+                "'" + bookAmount+"')";
         try {
             Connection con = Database.getConnection();
             Statement stmt = con.createStatement();
@@ -83,52 +78,6 @@ public class AddController implements Initializable {
         }
     }
 
-    private void modifyBook() {
-        BookDetails books = new BookDetails( title.getText(), author.getText(),Integer.parseInt(year.getText()),subject.getText(),isbn.getText(),isAvailable.getText());
-        if(modify(books)){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText(null);
-            alert.setContentText("Details are modified");
-            alert.showAndWait();
-        }
-        else{
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText("Nothing is changed");
-            alert.showAndWait();
-        }
-    }
-
-    public void inflate(BookDetails books){
-        String y = Integer.toString(books.getYearPublished());
-        isbn.setText(books.getIsbn());
-        title.setText(books.getTitle());
-        author.setText(books.getAuthor());
-        subject.setText(books.getGenre());
-        year.setText(y);
-        isAvailable.setText(books.getIsAvailable());
-        isModify = Boolean.TRUE;
-        isbn.setEditable(false);
-    }
-
-    public Boolean modify(BookDetails books){
-        String modify = "UPDATE books SET Title = ?, Author = ?, Subject = ?, yearPublished = ?, isAvailable = ? WHERE ISBN = ?";
-        try {
-            Connection con = Database.getConnection();
-            PreparedStatement stmt = con.prepareStatement(modify);
-            stmt.setString(1, books.getTitle());
-            stmt.setString(2, books.getAuthor());
-            stmt.setString(3, books.getGenre());
-            stmt.setInt(4, books.getYearPublished());
-            stmt.setString(5, books.getIsAvailable());
-            stmt.setString(6, books.getIsbn());
-            int res = stmt.executeUpdate();
-            return (res > 0);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
 
 
 }

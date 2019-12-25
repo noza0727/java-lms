@@ -3,6 +3,7 @@ package Library;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -60,13 +61,16 @@ public class AddLibrarianController implements Initializable {
         else{
         try {
 
-            String sqlinsert = "INSERT INTO `librarians`(`ID`, `FirstName`, `LastName`) VALUES ('"
+            String sqlinsert = "INSERT INTO `librarians`( id , firstname, lastname, password) VALUES ('"
                     + lib_ID_add.getText().trim() + "','"
                     + lib_Fname_add.getText().trim() + "','"
                     + lib_Lname_add.getText().trim() + "','"
                     + lib_pass_add.getText().trim() + "')";
-
             stmt.executeUpdate(sqlinsert);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Librarian is successfully added");
+            alert.showAndWait();
+            clearAdd();
         } catch (SQLException ex) {
             System.err.println(ex);
         }

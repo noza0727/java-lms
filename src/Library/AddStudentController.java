@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -51,20 +52,35 @@ public class AddStudentController implements Initializable {
 @FXML
 private Label add_student_info;
     public void addStudent(){
-        createConnection();
-        try {
-            String sqlInsert = "INSERT INTO `students`(`ID`, `FirstName`, `LastName`, `Password`,`Year`, `Department`) VALUES ('"
-                    + student_ID_add.getText().trim() + "','"
-                    + student_Fname_add.getText().trim() + "','"
-                    + student_Lname_add.getText().trim() + "','"
-                    + student_pass_add.getText().trim() + "','"
-                    + yearcombo.getValue().toString()+"','"
-                    + depcombo.getValue().toString()+"')";
-            stmt.executeUpdate(sqlInsert);
-            add_student_info.setText("Student is added successfully");
-        } catch (SQLException ex){
-            add_student_info.setText("Something went wrong, please try again");
-            System.err.println(ex);
+
+        if(student_Fname_add.getText() == null || student_ID_add.getText()==null||
+        student_Lname_add.getText()==null||student_pass_add.getText()==null||student_Lname_add.getText()==null){
+            add_student_info.setText("Please fill all fields");
+            add_student_info.setTextFill(Color.web("#9e3d4a"));
+        }
+        else {
+            try {
+                createConnection();
+                String sqlInsert = "INSERT INTO `students`(`ID`, `FirstName`, `LastName`, `Password`,`Year`, `Department`) VALUES ('"
+                        + student_ID_add.getText().trim() + "','"
+                        + student_Fname_add.getText().trim() + "','"
+                        + student_Lname_add.getText().trim() + "','"
+                        + student_pass_add.getText().trim() + "','"
+                        + yearcombo.getValue().toString() + "','"
+                        + depcombo.getValue().toString() + "')";
+                stmt.executeUpdate(sqlInsert);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setContentText("Student is added successfully");
+                alert.showAndWait();
+                stmt.executeUpdate("insert into issue (studentID) value ('"+student_ID_add.getText()+"')");
+            } catch (SQLException ex) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("Something went wrong. Please try again");
+                alert.showAndWait();
+                System.err.println(ex);
+            }
         }
     }
 
@@ -80,6 +96,7 @@ private Label add_student_info;
         student_pass_add.clear();
         student_Lname_add.clear();
         student_Fname_add.clear();
+        add_student_info.setText("");
     }
 
 

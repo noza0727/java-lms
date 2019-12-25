@@ -72,9 +72,9 @@ public class StudentsTable implements Initializable {
             String sqlData = "SELECT * FROM students";
             rs = conn.createStatement().executeQuery(sqlData);
             while (rs.next()) {
-               StudentDetails student = new StudentDetails(rs.getString("ID"),
-                       rs.getString("FirstName"), rs.getString("LastName"),
-                       rs.getString("Year"), rs.getString("Department"));
+               StudentDetails student = new StudentDetails(rs.getString("id"),
+                       rs.getString("firstname"), rs.getString("lastname"),
+                       rs.getString("year"), rs.getString("department"));
                 list_student.add(student);
             }
 
@@ -271,14 +271,14 @@ public class StudentsTable implements Initializable {
 
     }
 
-    public void deleteLib(){
+    public void deletestudent(){
         StudentDetails libselected = tableStudent.getSelectionModel().getSelectedItem();
         TablePosition pos =tableStudent.getSelectionModel().getSelectedCells().get(0);
         int row = pos.getRow();
         StudentDetails item = tableStudent.getItems().get(row);
         try {
             if(libselected!=null){
-                PreparedStatement statement = conn.prepareStatement("DELETE FROM students WHERE ID = ?");
+                PreparedStatement statement = conn.prepareStatement("DELETE FROM students WHERE id = ?");
                 statement.setString(1, item.getStudentID());
                 statement.executeUpdate();
             }

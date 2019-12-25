@@ -8,20 +8,48 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class BookDetails {
-    SimpleStringProperty isbn;
-    SimpleStringProperty title;
-    SimpleStringProperty author;
-    SimpleStringProperty genre;
-    SimpleIntegerProperty yearPublished;
-    SimpleStringProperty isAvailable;
+    private SimpleStringProperty isbn;
+    private SimpleStringProperty title;
+    private SimpleStringProperty author;
+    private SimpleStringProperty genre;
+    private SimpleIntegerProperty yearPublished;
+    private SimpleIntegerProperty amount;
+    private SimpleStringProperty issueTime;
 
-    public BookDetails(String title, String author, int publish_year, String genre, String isbn, String isAvailable) {
+
+
+    public void setIssueTime(String issueTime) {
+        this.issueTime.set(issueTime);
+    }
+
+    public BookDetails(String isbn, String issueDate, String title, String author, String genre, int publish_year) {
+        this.isbn = new SimpleStringProperty(isbn);
+        this.title = new SimpleStringProperty(title);
+        this.author = new SimpleStringProperty(author);
+        this.genre = new SimpleStringProperty(genre);
+        this.yearPublished = new SimpleIntegerProperty(publish_year);
+        this.issueTime = new SimpleStringProperty(issueDate);
+    }
+
+
+    public String getIssueTime() {
+        return issueTime.get();
+    }
+
+    public SimpleStringProperty issueTimeProperty() {
+        return issueTime;
+    }
+
+    public BookDetails(String title, String author, int publish_year, String genre, String isbn, int amount) {
         this.isbn = new SimpleStringProperty(isbn);
         this.title = new SimpleStringProperty(title);
         this.author = new SimpleStringProperty( author);
         this.genre = new SimpleStringProperty(genre);
         this.yearPublished = new SimpleIntegerProperty(publish_year);
-        this.isAvailable = new SimpleStringProperty(isAvailable);
+        this.amount = new SimpleIntegerProperty(amount);
+    }
+
+    public BookDetails() {
     }
 
     public void setIsbn(String isbn) {
@@ -69,12 +97,8 @@ public class BookDetails {
         return yearPublished;
     }
 
-    public String getIsAvailable() {
-        return isAvailable.get();
-    }
-
-    public SimpleStringProperty isAvailableProperty() {
-        return isAvailable;
+    public SimpleIntegerProperty amountProperty() {
+        return amount;
     }
 
     public void setTitle(String title) {
@@ -93,7 +117,11 @@ public class BookDetails {
         this.yearPublished.set(yearPublished);
     }
 
-    public void setIsAvailable(String isAvailable) {
-        this.isAvailable.set(isAvailable);
+    public void setAmount(int amount) {
+        this.amount.set(amount);
+    }
+
+    public int getAmount() {
+        return amount.get();
     }
 }

@@ -21,9 +21,10 @@
                 <TextField fx:id="searchField" prefHeight="25.0" prefWidth="400.0" promptText="Search" />
             </children>
         </HBox>
-      <HBox alignment="CENTER" layoutX="198.0" layoutY="330.0" prefHeight="35.0" prefWidth="206.0" spacing="30.0">
+      <HBox alignment="CENTER" layoutX="193.0" layoutY="339.0" prefHeight="35.0" prefWidth="214.0" spacing="30.0">
          <children>
-                <ToggleButton mnemonicParsing="false" onAction="#addBook" prefHeight="35.0" prefWidth="85.0" text="Add" textFill="#835858">
+
+                <ToggleButton fx:id="delete_book_lib" mnemonicParsing="false" onAction="#deleteBook" prefHeight="35.0" prefWidth="85.0" text="Delete" textFill="#835858">
                     <font>
                         <Font size="15.0" />
                     </font>
@@ -31,8 +32,7 @@
                         <ToggleGroup fx:id="operation" />
                </toggleGroup>
                 </ToggleButton>
-
-                <ToggleButton fx:id="delete_book_lib" mnemonicParsing="false" onAction="#deleteBook" prefHeight="35.0" prefWidth="85.0" text="Delete" textFill="#835858" toggleGroup="$operation">
+                <ToggleButton mnemonicParsing="false" onAction="#addBook" prefHeight="35.0" prefWidth="85.0" text="Add" textFill="#835858" toggleGroup="$operation">
                     <font>
                         <Font size="15.0" />
                     </font>

@@ -18,13 +18,13 @@
         </TableView>
         <HBox alignment="CENTER" layoutX="47.0" layoutY="56.0" prefHeight="31.0" prefWidth="507.0" spacing="15.0">
             <children>
-                <TextField prefHeight="25.0" prefWidth="400.0" promptText="Search" />
+                <TextField fx:id="searchField" prefHeight="25.0" prefWidth="400.0" promptText="Search" />
             </children>
         </HBox>
       <HBox layoutX="198.0" layoutY="330.0" prefHeight="35.0" prefWidth="202.0" spacing="30.0">
          <children>
 
-                <ToggleButton mnemonicParsing="false" prefHeight="35.0" prefWidth="85.0" text="Delete" textFill="#835858">
+                <ToggleButton mnemonicParsing="false" onAction="#deletestudent" prefHeight="35.0" prefWidth="85.0" text="Delete" textFill="#835858">
                     <font>
                         <Font size="15.0" />
                     </font>

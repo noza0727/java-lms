@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: e5dfdf;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.AdminController">
+    <Button fx:id="closeButton" layoutX="773.0" mnemonicParsing="false" onAction="#handleCloseButton" prefHeight="28.0" prefWidth="30.0" style="-fx-background-color: lightGrey;" text="X" textFill="#835858">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Button>
+    <HBox fx:id="user_box" alignment="CENTER" layoutX="221.0" layoutY="39.0" prefHeight="60.0" prefWidth="406.0" spacing="10.0">
+        <ToggleButton fx:id="btn_lib" mnemonicParsing="false" onAction="#userHandler" prefHeight="35.0" prefWidth="150.0" text="Librarian" textFill="#835858">
+            <toggleGroup>
+                <ToggleGroup fx:id="usersGroup" />
+            </toggleGroup>
+        </ToggleButton>
+        <ToggleButton fx:id="btn_student" mnemonicParsing="false" onAction="#userHandler" prefHeight="35.0" prefWidth="150.0" text="Students" textFill="#835858" toggleGroup="$usersGroup">
+            <font>
+                <Font name="Calibri Light" size="15.0" />
+            </font>
+        </ToggleButton>
+        <ToggleButton fx:id="btn_book" mnemonicParsing="false" onAction="#userHandler" prefHeight="35.0" prefWidth="150.0" text="Books" textFill="#835858" toggleGroup="$usersGroup">
+            <font>
+                <Font name="Calibri Light" size="15.0" />
+            </font>
+        </ToggleButton>
+    </HBox>
+    <Label alignment="CENTER" layoutX="14.0" layoutY="39.0" prefHeight="49.0" prefWidth="122.0" text="Admin" textFill="#835858">
+        <font>
+            <Font size="28.0" />
+        </font>
+    </Label>
+    <AnchorPane fx:id="anchorPane" layoutX="154.0" layoutY="107.0" prefHeight="400.0" prefWidth="650.0">
+
+    </AnchorPane>
+    <ToggleButton fx:id="logOut_admin" layoutX="681.0" layoutY="69.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="79.0" text="Sign Out" textFill="#835858">
+        <font>
+          <Font size="15.0" />
+        </font>
+    </ToggleButton>
+
+
+</AnchorPane>
